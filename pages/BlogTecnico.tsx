@@ -1,8 +1,50 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { BLOG_POSTS } from '../constants';
+import { BlogPost } from '../types';
+import MarkdownRenderer from '../components/MarkdownRenderer';
 
 const BlogTecnico: React.FC = () => {
+  const [selectedPost, setSelectedPost] = useState<BlogPost | null>(null);
+
+  if (selectedPost) {
+    return (
+      <div className="max-w-4xl mx-auto px-4 py-16 animate-in fade-in duration-500">
+        <button
+          onClick={() => setSelectedPost(null)}
+          className="flex items-center text-primary font-bold text-sm uppercase tracking-widest mb-12 hover:translate-x-[-8px] transition-transform group"
+        >
+          <span className="material-symbols-outlined mr-2">arrow_back</span>
+          VOLVER AL BLOG
+        </button>
+
+        <div className="mb-12">
+          <img
+            src={selectedPost.image}
+            alt={selectedPost.title}
+            className="w-full h-[400px] object-cover rounded-3xl shadow-2xl mb-10"
+          />
+          <div className="w-16 h-1 bg-primary mb-6"></div>
+          <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white leading-tight mb-4">
+            {selectedPost.title}
+          </h1>
+          <div className="flex items-center gap-4 text-gray-400 text-sm font-medium">
+            <span className="bg-primary/10 text-primary px-3 py-1 rounded-full text-[10px] font-bold uppercase">
+              {selectedPost.category}
+            </span>
+            <span>{selectedPost.date}</span>
+          </div>
+        </div>
+
+        <div className="bg-white dark:bg-gray-800 p-8 md:p-12 rounded-3xl shadow-sm border border-gray-100 dark:border-gray-700">
+          {selectedPost.contentFile && (
+            <MarkdownRenderer filename={selectedPost.contentFile} />
+          )}
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="max-w-7xl mx-auto px-4 py-16 animate-in fade-in duration-500">
       <div className="mb-16">
@@ -21,9 +63,9 @@ const BlogTecnico: React.FC = () => {
       </div>
 
       <div className="grid grid-cols-1 gap-12">
-        {BLOG_POSTS.map((post, idx) => (
+        {BLOG_POSTS.map((post) => (
           <article
-            key={idx}
+            key={post.id}
             className="bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 flex flex-col md:flex-row overflow-hidden hover:shadow-xl transition-all duration-300 group"
           >
             <div className="md:w-2/5 relative overflow-hidden h-64 md:h-auto">
@@ -36,6 +78,11 @@ const BlogTecnico: React.FC = () => {
                 <span className="bg-primary text-gray-900 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest shadow-lg">
                   {post.category}
                 </span>
+                {post.date && (
+                  <span className="ml-2 bg-gray-900/60 backdrop-blur-md text-white px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest shadow-lg">
+                    {post.date}
+                  </span>
+                )}
               </div>
             </div>
             <div className="p-10 md:w-3/5 flex flex-col justify-center">
@@ -43,11 +90,14 @@ const BlogTecnico: React.FC = () => {
                 {post.title}
               </h3>
               <div className="h-1 w-16 bg-primary mb-6 rounded-full"></div>
-              <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed text-justify mb-8">
+              <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed text-justify mb-8 line-clamp-4">
                 {post.description}
               </p>
               <div className="pt-6 border-t border-gray-50 dark:border-gray-700 mt-auto">
-                <button className="flex items-center text-primary font-bold text-xs uppercase tracking-widest group-hover:translate-x-2 transition-transform">
+                <button
+                  onClick={() => setSelectedPost(post)}
+                  className="flex items-center text-primary font-bold text-xs uppercase tracking-widest group-hover:translate-x-2 transition-transform"
+                >
                   LEER MÁS
                   <span className="material-symbols-outlined ml-2 text-sm">arrow_forward</span>
                 </button>

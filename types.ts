@@ -29,11 +29,13 @@ export interface Software {
 }
 
 export interface BlogPost {
+  id: string;
   title: string;
   category: string;
   description: string;
   image: string;
   date?: string;
+  contentFile?: string;
 }
 
 export interface Project {

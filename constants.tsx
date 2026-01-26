@@ -109,16 +109,22 @@ export const SOFTWARE_LIST: Software[] = [
 
 export const BLOG_POSTS: BlogPost[] = [
   {
+    id: "proyecto-evaluacion-drenaje",
     title: "Proyecto evaluación del Drenaje Víal Loja - Zamora",
-    category: "PROYECTO",
-    description: "Identificación de zonas de afectación por fallas en sistemas de drenaje. Evaluación técnica de drenajes longitudinales y transversales para proponer mejoras estructurales.",
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAWb1w5768WN-DheBLU68h1q_l3FntGD4CwgAQvHhhRq0a77PwY_nfe0O85rT1aSRmu4I966T4FE1zE38nkHw9XPVwBY7GARpSWYoVQDwBgxWkVhcoPuHzZj4FCOR6HAcB_TjfGOeFAiA1NWgR8qVpXHiktfMytkdWGJfw4xzFrsaCarwpHjdvmLhfuGC4ISwPCB92vpL3EQyTl93aAj5v4NsUgpk36sLM_NFeHXeYkYgUnouwQ7jTEiiMRNzEBHbqmP3Ytx2Pumw"
+    category: "HIDRÁULICA, BUENAS PRÁCTICAS, GP",
+    description: "Este proyecto busca identificar una zona de afectación por fallas en los sistemas de drenaje en la vía Loja - Zamora. Por lo que se proyecta desarrollar un inventario de un tramo piloto de la vía para efectuar una evaluación técnica de los drenajes...",
+    image: "/assets/blog/drenaje-loja-zamora.png",
+    date: "26 de agosto de 2020",
+    contentFile: "blog/drenaje-loja-zamora.md"
   },
   {
+    id: "contexto-hidroelectrico-ecuatoriano",
     title: "Contexto actual del sector Hidroeléctrico Ecuatoriano: Análisis de proyectos emblemáticos",
-    category: "ANÁLISIS",
-    description: "Análisis de los proyectos hidroeléctricos emblemáticos del Ecuador y su incidencia en el desarrollo nacional, matriz energética y sostenibilidad hídrica.",
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuC1Nhw2JgFS0ZaaeG8MMVyucY52EaGhKlreKbcAoCbkuyC7N9Ki8T0oOVppxiw_jCEjVxwVUgqDGvbPlKOxV5-veRaC0Dx-F66qZnXD_7Xy9a77p1xU9ra8tMBwan7x4lm52DmQrdDsXmxIJCeUG1wjDtnjLS9NuBjlI3U9Cy1d1KymQhO0YKsfnl8fJbghRlSDvZJcfDSslwdCIha-5YIVZ1_JGkCAQ90w8jpszAxN5N7LnmlBx9mkKm1EpgKNB1gsqZjdHb5IIQ"
+    category: "GENERAL",
+    description: "Este artículo hace un análisis de los proyectos hidroeléctricos emblemáticos del Ecuador y su incidencia en el desarrollo nacional. El acceso a la energía en uno de los pilares fundamentales en cualquier aspiración de crecimiento...",
+    image: "/assets/blog/sector-hidroelectrico.jpg",
+    date: "23 de octubre de 2019",
+    contentFile: "blog/sector-hidroelectrico.md"
   }
 ];
 
