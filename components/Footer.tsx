@@ -12,17 +12,14 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           {/* Logo & Info */}
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-8">
             <div className="flex items-center gap-3">
-              <img 
-                alt="UTPL Logo White" 
-                className="h-14 w-auto brightness-0 invert" 
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKsyIFPbz9D1_DAkhOWQto49jVoGL_ei6FnCiC9pkl5sOkeEq_8DlVvrrwIhiS-Prw1hPB1G9AZu6ynGgiVfyKZguX04gi8x3L48ipJERF2ArXijB-hvUiaN-gum6UsJQbqbGjddI7P8tih92Uqkg9Z3yYBQOe9QdBjY86aA0cl30Sv1wz1Tuqib9Oh48W2kXC-RMgMNrWvT2pcAEhVllORgCGcUSUd-gXzqFJ63L9SBWTtwHM8ZCEpwVUYMhQ6051m2XdJM3zgw" 
+              <img
+                alt="UTPL SMART WATER NETWORK"
+                className="h-24 w-auto brightness-0 invert"
+                src="/assets/logo-utpl-footer.png"
               />
             </div>
-            <p className="text-xs text-gray-400 uppercase font-bold tracking-widest leading-relaxed">
-              Universidad Técnica<br/>Particular de Loja
-            </p>
           </div>
 
           {/* Contacts */}
@@ -48,7 +45,7 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
             <ul className="text-sm text-gray-400 space-y-2">
               {Object.values(Page).map((item) => (
                 <li key={item}>
-                  <button 
+                  <button
                     onClick={() => onNavigate(item)}
                     className="hover:text-primary transition-colors flex items-center gap-2"
                   >

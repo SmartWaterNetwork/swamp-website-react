@@ -17,21 +17,15 @@ const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
-          <div 
+          <div
             className="flex-shrink-0 flex items-center cursor-pointer group"
             onClick={() => onNavigate(Page.HOME)}
           >
-            <div className="bg-primary p-2 rounded mr-3 group-hover:bg-primary-hover transition-colors">
-              <img 
-                alt="UTPL Logo" 
-                className="h-8 w-auto invert" 
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMI_NyphzEhyB5Dpb8sbKeuB0kzCxUKTLs59CoaCgAleF83e1NtZNVo-9uZKZX2t85OZgpYC3H8x_U74GBECB12tsRUGdSP08ydpM1SZMGMRRPAkxz0ID0RDdqbgKH1g8VFyzdMqq3HXgL4rXfevMs3zD-sXTJSOnsU7jahe4ERs0hFhlN3FYvVk6YLVBdz6z05WUYTpyK_8qV6QqKcmpFRTXtHh_IUu4h7nBrhg-VT-M5YXwJkZWzyiF51NXXGvfFZXyHr5oKvg" 
-              />
-            </div>
-            <div className="flex flex-col">
-              <span className="text-sm font-bold text-gray-900 dark:text-white leading-tight tracking-tight">SMART WATER</span>
-              <span className="text-sm font-bold text-gray-900 dark:text-white leading-tight tracking-tight">NETWORK</span>
-            </div>
+            <img
+              alt="UTPL SMART WATER NETWORK"
+              className="h-19 w-auto"
+              src="/assets/swam-logo-full.png"
+            />
           </div>
 
           {/* Desktop Nav */}
@@ -40,11 +34,10 @@ const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
               <button
                 key={item}
                 onClick={() => onNavigate(item)}
-                className={`px-1 pt-1 text-xs font-bold transition-all border-b-2 hover:text-primary ${
-                  currentPage === item 
-                    ? 'border-primary text-gray-900 dark:text-white' 
+                className={`px-1 pt-1 text-xs font-bold transition-all border-b-2 hover:text-primary ${currentPage === item
+                    ? 'border-primary text-gray-900 dark:text-white'
                     : 'border-transparent text-gray-500 dark:text-gray-400'
-                }`}
+                  }`}
               >
                 {item}
               </button>
@@ -53,7 +46,7 @@ const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
 
           {/* Mobile Menu Button */}
           <div className="lg:hidden">
-            <button 
+            <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="p-2 text-gray-500 hover:text-primary focus:outline-none"
             >
@@ -74,11 +67,10 @@ const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
                   onNavigate(item);
                   setIsMenuOpen(false);
                 }}
-                className={`block w-full text-left px-4 py-3 text-sm font-bold rounded-md ${
-                  currentPage === item 
-                    ? 'bg-primary/10 text-primary' 
+                className={`block w-full text-left px-4 py-3 text-sm font-bold rounded-md ${currentPage === item
+                    ? 'bg-primary/10 text-primary'
                     : 'text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800'
-                }`}
+                  }`}
               >
                 {item}
               </button>
