@@ -26,6 +26,7 @@ export interface Software {
   description: string;
   image: string;
   icon: string;
+  url?: string;
 }
 
 export interface BlogPost {

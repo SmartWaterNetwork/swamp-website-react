@@ -39,7 +39,9 @@ const Software: React.FC = () => {
               </div>
               <div className="mt-8 pt-6 border-t border-gray-100 dark:border-gray-700">
                 <a
-                  href="#"
+                  href={item.url || "#"}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center text-primary font-bold text-sm tracking-widest hover:text-primary-hover uppercase group"
                 >
                   ENLACE

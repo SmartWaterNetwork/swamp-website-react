@@ -82,28 +82,32 @@ export const SOFTWARE_LIST: Software[] = [
     name: "VENT-RED v1.0",
     description: "El software permite diseñar sistemas de ventilación por impulsión, mismo que atiende los principios de La Sociedad Americana de Calefacción, Refrigeración y Aire Achar (ASHRAE) lo que brinda al diseñador una gran facilidad en cuanto al tiempo de cálculo, precisión de resultados, dimensionamiento de la red y cálculo de pérdidas de carga.",
     image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCG22SOl64oy7MPWOdNdNzL9PM_qj3PrKiomuFD3YcktQ2t896kD3atDZhiRWj2ImF3AfqR9gVK9eq4JEZd7ZtET2WE9jyptzEKwTh6xRTCnEwODeLfiiRtgHHoLa4dM_PjzbJfMaV5pSct7Q4oXVJl1HVLWfjTwQMdS5BaEHpQtgnjH2udd6iCqcF-mUv6WcG_m0zxQlQ_lNGNqIv3AVr7gI_CKW0Zk3yucApw5fImLVlL9WGmsvBKKXKacHgsigto8wQQsn4_BA",
-    icon: "mode_fan"
+    icon: "mode_fan",
+    url: "http://201.159.222.179:8080/RedesVentilacion/"
   },
   {
     id: "hydrotransis",
     name: "HYDROTRANSIS",
     description: "La presente herramienta informática tiene como finalidad simular la evolución del transitorio a través del tiempo, en un sistema de conducción simple y un sistema de bombeo, en base a las propiedades hidráulicas de los elementos y componentes de los sistemas hidráulicos.",
     image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDEnyJOetAvQV995YBlqDvL8KcOu195t4bgYuXMBpp2jq9FlPS80zEIJR1wPE8f45DiqYi7a5e793o4w6HJx3gVpMlvUgfhJXDE20t6GV8zbN7QTFkIkjMCqoP0oirSopg5Fij0XvBz8RK__MhLvkYx5i0RHdz4tAYrOkNiAqGpqTAPkRjVLsRzoiUV3YZS_0PHpi3KBny5ja1dngHAUqFuAM_PdXjNxQJRQswNAmkevaCar8NRx3o1ilO6ecZyyNHzO4CsAzyU5g",
-    icon: "waves"
+    icon: "waves",
+    url: "http://200.0.29.31:8080/"
   },
   {
     id: "dhycob",
     name: "DHYCOB",
     description: "Herramienta que permite el análisis y diseño de elementos hidráulicos en sistemas de abastecimiento (para consumo humano, riego y abrevaderos), captaciones, canales abiertos, volúmenes en almacenamientos, estabilidad de cauces y sistemas de drenaje.",
     image: "https://lh3.googleusercontent.com/aida-public/AB6AXuADWks7wjHOLQBMsFhKf_bKkMmx717MaBh7KRVxTllXRIFOHIihvQr3ZvzKlyuqgIRwtIictbvpxUd8smbnwX3Vs9y36Wlm6ouMr5bgY8QmI73yTU1gkEnjcP-wlB3YkLDxC6lkD_RvaSHkP4_4pgSCIKjaFrIfKHNILTxJWTR_HbB_xyiMpmSQmmINKgRLTFqC0BgoiAkJgr9bfPqOM9J-KIUbWN1UHlpg_jc_tTNlS17_AnX5sSTD9e_ca19wCIzfwXl2xgD19A",
-    icon: "water_drop"
+    icon: "water_drop",
+    url: "http://201.159.222.179:8080/captacion/Default.aspx"
   },
   {
     id: "derap",
     name: "DERAP Simplex",
     description: "Aplicación web para el diseño óptimo - económico de redes de agua a presión, por el método Simplex. Incluye selección de opciones de cálculo y comparación entre diseño convencional y óptimo.",
     image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAExrIf_4LOcda4S_J7IR4PDzrUy4L4cqACvd2_f3E1R3ydCQQCmlv37lgZohgIZhMC09Hlyd8N5wmvar6g5IcjGSd-39Inqw-Uou3MPXCgPykrtiKbpu721O9hI96ZvyL2DTsn9PHx5N3nTLeAO00nK5zKxC9S6BxWuF3KkFgvXiN8QJZxi2RmdBeh029rRXEE5uC5Mvr4Ice1DzSXGOIhlQoZxBP1ZkxAJXsZxiM1w6qA3W6N_8UtPQPN12JfGl3xNVOgYf97Zw",
-    icon: "valve"
+    icon: "valve",
+    url: "http://201.159.222.179:8080/DerapServidor/Principal.aspx"
   }
 ];
 
