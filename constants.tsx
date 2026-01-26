@@ -131,19 +131,34 @@ export const BLOG_POSTS: BlogPost[] = [
 export const PROJECTS: Project[] = [
   {
     title: "Proyecto evaluación del Drenaje Vial Loja - Zamora",
-    description: "Identificación de fallas en sistemas de drenaje para tramo piloto.",
+    description: "Este proyecto busca identificar una zona de afectación por fallas en los sistemas de drenaje en la vía Loja - Zamora. Se proyecta desarrollar un inventario de un tramo piloto de la vía para efectuar una evaluación técnica de los drenajes...",
+    category: "BUENAS PRÁCTICAS",
     status: "FINALIZADO",
     authors: "Holger Benavides Muñoz, Sonia Gonzaga Valllejo, Alonso Zúñiga Suárez, Víctor Hugo González, Santiago Quiñones Cuenca.",
-    file: "informe.pdf",
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAWb1w5768WN-DheBLU68h1q_l3FntGD4CwgAQvHhhRq0a77PwY_nfe0O85rT1aSRmu4I966T4FE1zE38nkHw9XPVwBY7GARpSWYoVQDwBgxWkVhcoPuHzZj4FCOR6HAcB_TjfGOeFAiA1NWgR8qVpXHiktfMytkdWGJfw4xzFrsaCarwpHjdvmLhfuGC4ISwPCB92vpL3EQyTl93aAj5v4NsUgpk36sLM_NFeHXeYkYgUnouwQ7jTEiiMRNzEBHbqmP3Ytx2Pumw"
+    file: "/docs/investigacion/informe_drenaje_vial.pdf",
+    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAWb1w5768WN-DheBLU68h1q_l3FntGD4CwgAQvHhhRq0a77PwY_nfe0O85rT1aSRmu4I966T4FE1zE38nkHw9XPVwBY7GARpSWYoVQDwBgxWkVhcoPuHzZj4FCOR6HAcB_TjfGOeFAiA1NWgR8qVpXHiktfMytkdWGJfw4xzFrsaCarwpHjdvmLhfuGC4ISwPCB92vpL3EQyTl93aAj5v4NsUgpk36sLM_NFeHXeYkYgUnouwQ7jTEiiMRNzEBHbqmP3Ytx2Pumw",
+    mdFile: "investigacion/drenaje-vial-loja-zamora.md"
   },
   {
-    title: "Diseño de Red de Monitoreo Hidrológico",
-    description: "Implementación de sensores IoT para medición en tiempo real de caudales.",
-    status: "EN EJECUCIÓN",
-    authors: "Equipo de Hidrología Aplicada, Tesistas de Ingeniería Civil.",
-    file: "plan_trabajo.pdf",
-    image: "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&q=80&w=800"
+    title: "Conferencia: \"Agua y ciudad. Cumplimiento de los ODS\"",
+    description: "Análisis detallado de los desafíos urbanos en la gestión del agua y estrategias para el cumplimiento de los Objetivos de Desarrollo Sostenible (ODS) de la ONU en entornos municipales.",
+    category: "CONFERENCIAS",
+    tag: "Martes de Naturaleza",
+    authors: "SWAM Research Group",
+    file: "/docs/investigacion/conferencia_agua_ciudad_ods.pdf",
+    image: "/assets/investigacion/conferencia_agua_ciudad.jpg",
+    mdFile: "investigacion/conferencia-agua-ciudad-ods.md",
+    date: "20 de Septiembre, 2022"
+  },
+  {
+    title: "Ponencia: Tecnologías emergentes en Hidrología",
+    description: "Exploración de innovaciones tecnológicas como sensores IoT de bajo costo, gemelos digitales y modelos predictivos para la optimización de redes de distribución de agua potable.",
+    category: "CONFERENCIAS",
+    tag: "Congreso Internacional",
+    authors: "SWAM Research Group",
+    file: "#",
+    image: "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&q=80&w=800",
+    date: "15 de Noviembre, 2023"
   }
 ];
 
@@ -153,11 +168,12 @@ export const ACADEMIC_RESOURCES: AcademicResource[] = [
     description: "Guía práctica para experimentos de ingeniería en mecánica de fluidos.",
     category: "Manuales",
     type: "DOUMENTOS",
-    authors: "José Sánchez Paladines & Holger Benavides Muñoz",
+    authors: "Holger Benavides Muñoz",
     isbn13: "978-9942-00-710-0",
-    year: "2018",
-    fileName: "Manual_Lab Mecánica de Fluidos.pdf",
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBedQ2YcpyAkdVYKoRMNsaHu2AKybBrtStZBTlyWphV9r2gOg5WXIIg-_IMrNcdS-eqUeYTy1qAAwZgq3EBEQt2I1qiBJTI_0MTF1g0WvIA-r6GAiOqBzwaCuDGECAU0uo31EkNowO0sizubomBOc0YBWaPBRnMKrxKBu1Mezst2M0sjdkrpBR_w49gNFFBI-REKoG_-1joqg3nexezsLixNQ13mMmproqJYy1_cv03d6ZtEDXtt84a5Up1Vt97rjSTAg5RNTNsCg"
+    year: "2010",
+    pdfFile: "/docs/publicaciones/Manual_Lab_Mecanica_Fluidos.pdf",
+    image: "/assets/recursos/publicaciones/Manual_Fluidos.jpg",
+    mdFile: "recursos-academicos/publicaciones/manual-laboratorio-fluidos.md"
   },
   {
     title: "Naturaleza (Descarga libre)",
@@ -166,42 +182,44 @@ export const ACADEMIC_RESOURCES: AcademicResource[] = [
     type: "DOUMENTOS",
     authors: "Holger Benavides Muñoz & Rafael Morales Astudillo",
     year: "2020",
-    fileName: "Revista_Naturaleza_2020.pdf",
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDbXaexT_ZQ8fUyL2RzTzztKIPM9JxhMGzneOMBRZBwXU-t2ghNdSBXBuDb9Q_m43VhDmLMeEvT2R4av8O9madsBaznu9GQO87Q6IjX8-hC1e-BbVoGkhNfY-Ab6KQm5RnPOhWB6J4A2FDcjfXa5btAimwAkmy9b-xgdq--b3ySc_RxCJlhS0YVdgV_hPGXYw_pHIbEIc36n2ABU4Wh4QuQQL-n0FyDZO5yMnaTUAV5aUjAFeihWjW0fDtC7_TafABA0FeeFL_6tw"
+    pdfFile: "/docs/publicaciones/Revista_Naturaleza_2020.pdf",
+    image: "/assets/recursos/publicaciones/Libro_2020.jpg",
+    mdFile: "recursos-academicos/publicaciones/revista-naturaleza-2020.md"
   },
   {
     title: "Prospección y análisis hidrogeológico del potencial acuífero. Aplicación didáctica con fines de riego",
-    description: "Prospección y análisis hidrogeológico del potencial acuífero. Aplicación didáctica con fines de riego.",
+    description: "Estudio sobre el potencial acuífero y su aplicación didáctica.",
     category: "Libros",
     type: "PAPER",
     authors: "Benavides-Muocia Holger & Vaca-Carrión Richard",
     isbn13: "978-613-9-26208-3",
     year: "2018",
-    publishedAt: "Dec 14, 2018",
-    fileName: "Libro Prospeccion.pdf",
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCz8NldXpulUal-Ao5RB4oscfh23CqsLJMjP4zZkvGI0nwWTaeukViekiHNtvXJyZ_wysSt7UbeIi2TLaSdXGbsBH4mGr6ZsRAvYZUFiulwkrP6HTNPtQ7eC_IaMjvL11znKLdDAgBRSQIpIXxvewp9O-QSSg_fE4i6PV1UzWa6g_mS1oVAhghCIG-Ng6Q_DQIr2ol5MLZZdrlJaB321c-Gix3a6cBSQoTUirqjYcfnSlSRJka64mCX6VPTCjrJQFi6ugEaTYmnaw"
+    pdfFile: "/docs/publicaciones/Libro_Prospeccion.pdf",
+    image: "/assets/recursos/publicaciones/Prospeccion.jpg",
+    mdFile: "recursos-academicos/publicaciones/prospeccion-hidrogeologica.md"
   },
   {
     title: "Evaluación y diagnóstico de sistemas de abastecimiento de agua. Sostenibilidad: social, económica y ambiental",
-    description: "Evaluación y diagnóstico de sistemas de abastecimiento de agua. Sostenibilidad: social, económica y ambiental",
+    description: "Evaluación integral de sistemas de agua potable.",
     category: "Libros",
     type: "PAPER",
     authors: "Benavides-Muñoz Holger",
     isbn13: "978-620-2-14728-6",
     year: "2018",
-    publishedAt: "Nov 23, 2018",
-    fileName: "Libro Diagnostico.pdf",
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuC1Nhw2JgFS0ZaaeG8MMVyucY52EaGhKlreKbcAoCbkuyC7N9Ki8T0oOVppxiw_jCEjVxwVUgqDGvbPlKOxV5-veRaC0Dx-F66qZnXD_7Xy9a77p1xU9ra8tMBwan7x4lm52DmQrdDsXmxIJCeUG1wjDtnjLS9NuBjlI3U9Cy1d1KymQhO0YKsfnl8fJbghRlSDvZJcfDSslwdCIha-5YIVZ1_JGkCAQ90w8jpszAxN5N7LnmlBx9mkKm1EpgKNB1gsqZjdHb5IIQ"
+    pdfFile: "/docs/publicaciones/Libro_Diagnostico.pdf",
+    image: "/assets/recursos/publicaciones/Diagnostico.jpg",
+    mdFile: "recursos-academicos/publicaciones/evaluacion-diagnostico-agua.md"
   },
   {
     title: "Management of Hydrological Systems",
     description: "Analysis and perspective of the contingent valuation of water for mountain basins",
     category: "Manuales",
     type: "PAPER",
-    authors: "Equipo SWAM",
-    year: "2021",
-    fileName: "Libro Management of Hydrological Systems.pdf",
-    image: "https://images.unsplash.com/photo-1544377193-33dcf4d68fb5?auto=format&fit=crop&q=80&w=400"
+    authors: "Benavides-Muñoz Holger",
+    year: "2018",
+    pdfFile: "/docs/publicaciones/Libro_Management_Hydrological_Systems.pdf",
+    image: "/assets/recursos/publicaciones/Hydrological.jpg",
+    mdFile: "recursos-academicos/publicaciones/management-hydrological-systems.md"
   },
   {
     title: "EFECTOS DEL CAMBIO CLIMÁTICO EN EL HÁBITAT DE LAS ESPECIES Y LOS O.D.S. (Descarga libre)",
@@ -210,64 +228,83 @@ export const ACADEMIC_RESOURCES: AcademicResource[] = [
     type: "PAPER",
     authors: "Varios Autores",
     year: "2020",
-    fileName: "Efectos del cambio climático en el hábitat de las especies y los O.D.S.pdf",
-    image: "https://images.unsplash.com/photo-1516979187457-637abb4f9353?auto=format&fit=crop&q=80&w=400"
+    pdfFile: "/docs/publicaciones/Efectos_cambio_climatico.pdf",
+    image: "/assets/recursos/publicaciones/Cambio_Climatico_ODS.png",
+    mdFile: "recursos-academicos/publicaciones/efectos-cambio-climatico.md"
   }
 ];
 
 export const ACADEMIC_VIDEOS: AcademicVideo[] = [
   {
-    title: "Tutorial VENT-RED v1.0: Diseño de sistemas de ventilación",
-    thumbnail: "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&q=80&w=800",
-    duration: "12:45",
-    category: "Software"
+    title: "Muestreador automático de agua (M.A.d.A.)",
+    thumbnail: "/assets/recursos/videos/MADA_1.jpg",
+    videoUrl: "https://www.youtube.com/watch?v=PJjtC3hYDJM",
+    duration: "02:15",
+    category: "SOFTWARE",
+    mdFile: "recursos-academicos/videos/muestreador-mada-1.md"
   },
   {
-    title: "Modelación de Transitorios en HYDROTRANSIS",
-    thumbnail: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800",
+    title: "Muestreador automático de agua (MADA)",
+    thumbnail: "/assets/recursos/videos/MADA_2.jpg",
+    videoUrl: "https://www.youtube.com/watch?v=niLXom_ImCQ",
+    duration: "03:40",
+    category: "SOFTWARE",
+    mdFile: "recursos-academicos/videos/muestreador-mada-2.md"
+  },
+  {
+    title: "Guardianes de la Sostenibilidad",
+    thumbnail: "/assets/recursos/videos/Guardianes.jpg",
+    videoUrl: "https://www.youtube.com/watch?v=c9kJGy5yNOQ",
+    duration: "15:20",
+    category: "CONFERENCIAS",
+    mdFile: "recursos-academicos/videos/guardianes-sostenibilidad.md"
+  },
+  {
+    title: "PÁRAMOS: CONSERVACIÓN Y AMENAZAS",
+    thumbnail: "/assets/recursos/videos/Paramos.jpg",
+    videoUrl: "https://www.youtube.com/watch?v=s7f2stx3qyc",
+    duration: "45:10",
+    category: "WEBINAR",
+    mdFile: "recursos-academicos/videos/paramos-conservacion.md"
+  },
+  {
+    title: "Aumento del consumo de agua domiciliaria como efecto de los fenómenos mundiales",
+    thumbnail: "/assets/recursos/videos/Consumo_Agua.jpg",
+    videoUrl: "https://www.youtube.com/watch?v=jcCgtEqXzkQ",
+    duration: "32:45",
+    category: "WEBINAR",
+    mdFile: "recursos-academicos/videos/consumo-agua-domiciliaria.md"
+  },
+  {
+    title: "Ingeniería Civil e Hidráulica, entrevista para 'Indoamérica Investiga'",
+    thumbnail: "/assets/recursos/videos/Entrevista_Indoamerica.jpg",
+    videoUrl: "https://www.youtube.com/watch?v=cfNKug_FV_Y",
     duration: "18:20",
-    category: "Tutoriales"
+    category: "ENTREVISTA",
+    mdFile: "recursos-academicos/videos/entrevista-indoamerica.md"
   },
   {
-    title: "Gestión Inteligente de Redes de Agua (SWAM)",
-    thumbnail: "https://images.unsplash.com/photo-1562613531-729977833503?auto=format&fit=crop&q=80&w=800",
-    duration: "25:30",
-    category: "Conferencias"
+    title: "¿Por qué localizar fugas de agua?",
+    thumbnail: "/assets/recursos/videos/Fugas_Agua.jpg",
+    videoUrl: "https://www.youtube.com/watch?v=Bm72wGro3RA",
+    duration: "05:30",
+    category: "TUTORIALES",
+    mdFile: "recursos-academicos/videos/localizar-fugas-agua.md"
   },
   {
-    title: "Proyecto de Vinculación: Sistemas de Riego Comunitarios",
-    thumbnail: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&q=80&w=800",
-    duration: "14:50",
-    category: "Proyecto de vinculación"
+    title: "Ejemplo de introducción a Epanet",
+    thumbnail: "/assets/recursos/videos/Epanet_Intro.jpg",
+    videoUrl: "https://www.youtube.com/watch?v=j2umP5SYbOM",
+    duration: "12:15",
+    category: "TUTORIALES",
+    mdFile: "recursos-academicos/videos/introduccion-epanet.md"
   },
   {
-    title: "Uso de Sensores IoT en Redes de Abastecimiento",
-    thumbnail: "https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?auto=format&fit=crop&q=80&w=800",
-    duration: "15:10",
-    category: "Tutoriales"
-  },
-  {
-    title: "Software DHYCOB: Diseño de Elementos Hidráulicos",
-    thumbnail: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&q=80&w=800",
+    title: "Instalaciones hidrosanitarias en edificios con CYPE. Parte 1",
+    thumbnail: "/assets/recursos/videos/CYPE_Parte1.jpg",
+    videoUrl: "https://www.youtube.com/watch?v=N90YaGzBJck",
     duration: "21:05",
-    category: "Software"
-  },
-  {
-    title: "Proyecto de Vinculación: Calidad del Agua en Zonas Rurales",
-    thumbnail: "https://images.unsplash.com/photo-1468413927635-132dd0d724d2?auto=format&fit=crop&q=80&w=800",
-    duration: "10:30",
-    category: "Proyecto de vinculación"
-  },
-  {
-    title: "Agua y Ciudad: Cumplimiento de los ODS",
-    thumbnail: "https://images.unsplash.com/photo-1449156003053-c30c3b9c5931?auto=format&fit=crop&q=80&w=800",
-    duration: "45:00",
-    category: "Conferencias"
-  },
-  {
-    title: "Configuración de Nodos en DERAP Simplex",
-    thumbnail: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800",
-    duration: "09:30",
-    category: "Tutoriales"
+    category: "TUTORIALES",
+    mdFile: "recursos-academicos/videos/instalaciones-cype-1.md"
   }
 ];

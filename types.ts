@@ -41,10 +41,14 @@ export interface BlogPost {
 export interface Project {
   title: string;
   description: string;
-  status: 'FINALIZADO' | 'EN EJECUCIÓN';
+  category: 'BUENAS PRÁCTICAS' | 'CONFERENCIAS';
+  status?: string; // e.g., "FINALIZADO", "EN EJECUCIÓN"
   authors: string;
   file: string;
   image?: string;
+  mdFile?: string;
+  date?: string;
+  tag?: string; // Specific tag like "Martes de Naturaleza"
 }
 
 export interface AcademicResource {
@@ -59,6 +63,8 @@ export interface AcademicResource {
   language?: string;
   publishedAt?: string;
   fileName?: string;
+  pdfFile?: string;
+  mdFile?: string;
   type?: string; // e.g., "DOUMENTOS", "PAPER"
 }
 
@@ -67,4 +73,6 @@ export interface AcademicVideo {
   thumbnail: string;
   duration: string;
   category: string;
+  videoUrl?: string;
+  mdFile?: string;
 }
