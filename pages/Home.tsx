@@ -41,15 +41,15 @@ const Home: React.FC = () => {
     <div className="animate-in fade-in duration-700">
       {/* Main Slider Section */}
       <section className="relative w-full h-[500px] overflow-hidden bg-gray-900 group">
-        <div 
+        <div
           className="flex transition-transform duration-700 ease-in-out h-full"
           style={{ transform: `translateX(-${currentSlide * 100}%)` }}
         >
           {SLIDES.map((slide, idx) => (
             <div key={idx} className="min-w-full h-full relative">
-              <img 
-                src={slide.image} 
-                alt={slide.title} 
+              <img
+                src={slide.image}
+                alt={slide.title}
                 className="w-full h-full object-cover opacity-60"
               />
               <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-4">
@@ -67,13 +67,13 @@ const Home: React.FC = () => {
         </div>
 
         {/* Navigation Arrows (Reference Style: Red circles with white arrows) */}
-        <button 
+        <button
           onClick={prevSlide}
           className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-red-600 rounded-full flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity hover:bg-red-700 shadow-lg"
         >
           <span className="material-icons">chevron_left</span>
         </button>
-        <button 
+        <button
           onClick={nextSlide}
           className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-red-600 rounded-full flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity hover:bg-red-700 shadow-lg"
         >
@@ -86,9 +86,8 @@ const Home: React.FC = () => {
             <button
               key={idx}
               onClick={() => setCurrentSlide(idx)}
-              className={`w-3 h-3 rounded-full transition-all ${
-                currentSlide === idx ? 'bg-primary scale-125' : 'bg-white/50 hover:bg-white'
-              }`}
+              className={`w-3 h-3 rounded-full transition-all ${currentSlide === idx ? 'bg-primary scale-125' : 'bg-white/50 hover:bg-white'
+                }`}
             />
           ))}
         </div>
@@ -107,7 +106,7 @@ const Home: React.FC = () => {
                 Operaciones de la red de agua ofrecen la promesa de mejores operaciones a través de un mejor conocimiento y un control más estricto de los activos extensos y complejos de la red. La industria del agua no es tradicionalmente una de las primeras en adoptar rápidamente estas soluciones, pero se está adaptando rápidamente a esta nueva necesidad.
               </p>
             </div>
-            
+
             <div className="flex flex-col items-center text-center">
               <div className="w-16 h-1 bg-primary mb-6"></div>
               <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-6 uppercase tracking-tight">
@@ -148,7 +147,7 @@ const Home: React.FC = () => {
             <p>
               Espero que disfrute de una grata experiencia en nuestro Laboratorio Virtual. El SWAM actualmente se encuentra en desarrollo. Por favor reporte todos los comentarios, errores, y sugerencias a <a className="text-primary font-bold hover:underline" href="mailto:hmbenavides@utpl.edu.ec">hmbenavides@utpl.edu.ec</a>.
             </p>
-            
+
             <div className="mt-8 p-6 bg-gray-50 dark:bg-gray-800/50 border-l-4 border-gray-300 dark:border-gray-700 italic text-sm">
               Advertencia: La UTPL o los autores, no se responsabilizan por los errores o mala interpretación, en la información generada en el SWAM.
             </div>

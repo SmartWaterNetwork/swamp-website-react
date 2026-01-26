@@ -14,6 +14,7 @@ export interface TeamMember {
   role: string;
   image: string;
   description: string;
+  mdFile?: string;
   email?: string;
   googleScholar?: string;
   linkedin?: string;

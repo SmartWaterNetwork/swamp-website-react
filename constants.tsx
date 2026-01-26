@@ -3,67 +3,75 @@ import { TeamMember, Software, BlogPost, Project, AcademicResource, AcademicVide
 
 export const TEAM_MEMBERS: TeamMember[] = [
   {
-    name: "Manuel Quiñones C.",
+    name: "Silvio Aguilar",
     role: "INVESTIGADOR UTPL",
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDpRJBwouQITv8pI49o_Wn0nkIl1ifcCI3krcj757GgD7GoKleUqeACp6EMttQgyIpdgnoOFefWAhZ7_7koh5r6aJbckCLPtGLgr3h9h1pIHW3Hi0fPeVHqvf6e5O-_ioPF5-3O7RvXIwCNygNfmmEKX6giJ-926p91YHddAYF49SHNSu5eJSOxrZD7gzVYrdC-dmgkYtBmyA3_YbgvvgIrj069rE-KTcBjUquOPsJxnP3xL_bjyKIKbUUkL_xtIx7JbfdNHFEiAg",
-    description: "Ingeniero en Electrónica y Telecomunicaciones por la Universidad Técnica Particular de Loja (UTPL). Magister por la Universidad Nacional de Loja especializado en sistemas digitales. Docente investigador en la UTPL de las asignaturas de Sistemas Embebidos, Procesamiento de Señales, Electrónica de Radio Frecuencia, Tecnologías Inalámbricas de Comunicación, entre otras. Experiencia de 14 años en el Departamento de Ciencias de la Computación y Electrónica en la Sección de Electrónica y Telecomunicaciones (actualmente). Sus líneas de investigación de interés son: redes de sensores inalámbricas (WSN), Internet de las Cosas (IoT) y Radio Definida mediante Software (SDR), logrando varias publicaciones (artículos y libros) y solicitudes de patente internacionales y nacionales en estas líneas. Actualmente se desempeña como líder del Laboratorio de Prototipos de Telecomunicaciones de la UTPL.",
-    email: "maquinones@utpl.edu.ec",
+    image: "/assets/team/SilvioAguilar.jpg",
+    description: "Doctorando en Ciencia y Tecnología Ambiental Universidad de la Coruña-España...",
+    mdFile: "equipo/silvio-aguilar.md",
+    email: "saguilar@utpl.edu.ec",
     linkedin: "https://investigacion.utpl.edu.ec/"
-  },
-  {
-    name: "Holger Benavides Muñoz",
-    role: "INVESTIGADOR UTPL",
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDezfUAAWqWPX6t0ZV9xULYqoTCgxyDolEqP0Vbwl5E60GUrloSDL4H2lsDAoUZSewRM0hM6I1Z0FRZvIrF8gH1VLa9WjCSqEdLocjD751OGSVkxy7uP7_AKjfVrG_KTG2GnA1fIkiZ6ty_m-BWRAgGeuOoI4N6tLjeNmXW5GKisGQMtKoJcc1J-oskXO2iEujtvxkKHB1HV4FuXKrG_zuUFm4yWBWCw9e9Kkc5Hr-Ba2FiAS5-Wlf-odB0cL2vmtLpsoTUjMALtw",
-    description: "Ingeniero Civil (UTPL), Especialista en \"Gestión sostenible del agua en el entorno urbano\" y Doctor en \"Ingeniería hidráulica y medio ambiente\" por la Universidad Politécnica de Valencia, España; profesor principal titular del Departamento de Ingeniería Civil. Coordinador del grupo de investigación \"I+D Smart Water Network\". Ha sido director de la Unidad de Transferencia y Tecnología de Ingeniería Civil - UTTIC - UTPL, Responsable de la Sección de Recursos Hídricos, Director del Departamento de Geología, Minas e Ingeniería Civil, Coordinador de la Titulación de Ingeniería Civil, Mentalizador, Socio fundador y Primer Presidente del Primer SpinOff de la UTPL - AGEMIC Cia. Ltda. Voluntario en Ingeniería Sin Fronteras - ISF. Desarrolla proyectos relacionados con Hidráulica vial, diseño y gestión de sistemas de abastecimiento de agua (urbano, rural y domiciliar); sectorización y balance hídrico de redes, reducción del agua no contabilizada, entre otros. Sus publicaciones y tareas más relevantes constan en: https://investigacion.utpl.edu.ec/es/hmbenavides ; en http://bit.ly/HolgerBenavides ; y en ORCID en: http://orcid.org/0000-0001-7075-0905.",
-    email: "hmbenavides@utpl.edu.ec",
-    googleScholar: "https://orcid.org/0000-0001-7075-0905"
   },
   {
     name: "Eduardo Carrión Coronel",
     role: "INVESTIGADOR UTPL",
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAYoMCVCW5FdO9Ic8p2Ja05vx7Q9JcTAbE_NDGEKZ4fHIRelg1MjL7coR4IdomGCm5gqggKu_V8df8XfKKiRwEJB4pSqN9ET08sdIPJdhWgZe9rEvusJHHkkGp0OsUl5zdmHRwAsdURjaxbQpmE4Jv6Iw_ZjF_jF4kowCCMnZLwRdnDxHYBtflN5nDLdWn0fMkY3KZ09HPKmFIwQg-ja86m7INGu1pqwG02Q4d5RpUwUI7E2pAUeHJwQaKlIIf-ub6DN6Jmd0xaxw",
-    description: "Es Doctor en Ingeniería Civil por la Universidad de Granada, España. Línea de investigación: Hidráulica Computacional. Máster en Ingeniería Geológica aplicada a la obra Civil por la Universidad de Granada, España. Ingeniero Civil y docente Universitario del Departamento de Ingeniería Civil, Universidad Técnica Particular de Loja.",
+    image: "/assets/team/EduardoCarrion.jpg",
+    description: "Doctor en Ingeniería Civil por la Universidad de Granada, España...",
+    mdFile: "equipo/eduardo-carrion.md",
     email: "eecarrion@utpl.edu.ec",
+    linkedin: "https://investigacion.utpl.edu.ec/"
+  },
+  {
+    name: "Holger Benavides Muñoz",
+    role: "INVESTIGADOR UTPL / COORDINADOR",
+    image: "/assets/team/HolgerBenavides.jpg",
+    description: "Doctor en Ingeniería hidráulica y medio ambiente por la Universidad Politécnica de Valencia...",
+    mdFile: "equipo/holger-benavides.md",
+    email: "hmbenavides@utpl.edu.ec",
+    googleScholar: "https://orcid.org/0000-0001-7075-0905"
+  },
+  {
+    name: "Santiago Quiñones C.",
+    role: "DOCENTE INVESTIGADOR",
+    image: "/assets/team/SantiagoQuinones.png",
+    description: "Máster en Ingeniería de Software y Sistemas Informáticos por la UNIR...",
+    mdFile: "equipo/santiago-quinones.md",
+    email: "saquinones@utpl.edu.ec",
     linkedin: "https://investigacion.utpl.edu.ec/"
   },
   {
     name: "Fausto Vinicio López Rodríguez",
     role: "INVESTIGADOR UTPL",
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAGi0oBqTEBEobmaxcRy8v1JgH4-9NVmQeqmTHUgAhMNz3lkcE6zmTLUBGf_81fTHuKqPznGgMHPSmMd7KozurnrPtfMWVIJdvQozxDLW1wVg-agAJUsck5r4AIcpZaAvGpqlKCwpLmw6EJP7FDN51TS3Z0QMNyGpLwD9_QRNsRTk_xqw9GV2Mud44I1LQTKz5sZb4GkSKRC9uwkIkgXiUMNRtJs7saTef5Cf4iKxEHC0wNojIM8wYeXBTOiBIoxec4hIORcub2UQ",
-    description: "Posee una maestría en \"Formación de Formadores\" otorgada por la Universidad de Sevilla y otra en \"Manejo y Gestión del Medio Natural\" por parte de la Universidad de Cádiz (España). Es Doctor en Gestión y Conservación del Mar por la Universidad de Cádiz (España). Cuenta con más de 30 años de experiencia en temas de gestión ambiental y conservación: áreas protegidas, manglares y planificación para la conservación. Estuvo vinculado por más de 14 años a una ONG de conservación. Imparte la cátedra de áreas protegidas en la UTPL por más de 10 años. Ha publicado varios textos sobre el Parque Nacional Podocarpus, humedales y manglares de la región sur del Ecuador y posee varios artículos científicos.",
+    image: "/assets/team/FaustoLopez.jpg",
+    description: "Doctor en Gestión y Conservación del Mar...",
+    mdFile: "equipo/fausto-lopez.md",
     email: "fvlopez@utpl.edu.ec",
-    linkedin: "https://investigacion.utpl.edu.ec/"
-  },
-  {
-    name: "Santiago Quiñones C.",
-    role: "INVESTIGADOR UTPL",
-    image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=400",
-    description: "Máster en Ingeniería de Software y Sistemas Informáticos, Universidad Internacional de la Rioja - España, Ingeniero en Sistemas Informáticos y Computación, Universidad Técnica Particular de Loja - Ecuador. Docente Universitario en la UTPL en asignaturas de Fundamentos de Programación, Lógica de la Programación, Arquitectura de Aplicaciones desde hace 8 años. Labora en el Departamento de Geología, Minas e Ingeniería Civil en la Sección Departamental de Recursos Hídricos y se encuentra involucrado en el desarrollo de Laboratorios Virtuales de Simulación (Ingeniería Sísmica, Hidráulica, Hidrogeología), en la integración de Redes de Sensores para visualización de datos meteorológicos en tiempo real.",
-    email: "saquinones@utpl.edu.ec",
-    linkedin: "https://investigacion.utpl.edu.ec/"
-  },
-  {
-    name: "Alexandra Moncayo",
-    role: "INVESTIGADORA UTPL",
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400",
-    description: "Maestra en Arquitectura, \"Diseño Arquitectónico\" Universidad Nacional Autónoma de México - Magister en \"Desarrollo Comunitario\" Universidad Nacional de Loja. Diplomado en \"Educadores en Arquitectura de Paisaje\" Universidad Pontificia Bolivariana Colombia. Arquitecto de la UTPL, Universidad Técnica Particular de Loja. Cursando doctorado en Arquitectura en la UNAM, Universidad Nacional Autónoma de México. Docente universitario titulación de Arquitectura UTPL de las materias de Taller de Proyectos Arquitectónicos en todos sus niveles, Dibujo Arquitectónico, Introducción a la Arquitectura, Seminarios de Diseño de Paisaje en pregrado y Seminario de Paisaje Urbano Contemporáneo en la Maestría en Ordenamiento Territorial y Diseño urbano. Experiencia de 6 años en la Unidad de diseño e investigación en Arquitectura y de 6 años en el Departamento de Arquitectura y Arte hasta la actualidad.",
-    email: "amoncayo@utpl.edu.ec",
-    linkedin: "https://investigacion.utpl.edu.ec/"
-  },
-  {
-    name: "Silvio Aguilar",
-    role: "INVESTIGADOR UTPL",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=400",
-    description: "Doctorando en Ciencia y Tecnología Ambiental Universidad de la Coruña-España. Máster en Gestión Integral del Agua Universidad de Cádiz-España 2014. Diplomado en Auditoría en Gestión de la Calidad por la Universidad Técnica Particular de Loja año 2007. Ingeniero Químico por la Universidad Técnica Particular de Loja año 2004. Docente Investigador con 18 años de experiencia en las asignaturas: Ingeniería Ambiental, Tratamiento de aguas, Evaluación de Impactos ambientales, Tecnologías Limpias y alternativas, Sistemas Integrados de Gestión, Laboratorio de sanitaria, Química general y orgánica, Líder Técnico por 10 años en los laboratorios UTPL, responsable de Sección de Ingeniería Ambiental durante 2 años.",
-    email: "saguilar@utpl.edu.ec",
     linkedin: "https://investigacion.utpl.edu.ec/"
   },
   {
     name: "Mireya Lapo",
     role: "INVESTIGADORA UTPL",
-    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=400",
-    description: "Doctora por la Universidad Politécnica de Valencia en Ingeniería del Agua y Medioambiental. Se ha desempeñado en el área de la hidráulica en instituciones como CARE Internacional, Pastoral Social de Loja, Fondo Ecuatoriano Populorum Progressio, Gobierno Provincial de Loja. Actualmente es Docente de la Universidad Técnica Particular de Loja. Su línea de investigación es la Ingeniería Hidráulica en el campo de diseños óptimos de redes de distribución para abastecimiento y riego, automatismos, y en la gestión eficiente del recurso hídrico.",
+    image: "/assets/team/MireyaLapo.jpg",
+    description: "Doctora en Ingeniería del Agua y Medioambiental...",
+    mdFile: "equipo/mireya-lapo.md",
     email: "mclapo@utpl.edu.ec",
+    linkedin: "https://investigacion.utpl.edu.ec/"
+  },
+  {
+    name: "Manuel Quiñones C.",
+    role: "INVESTIGADOR UTPL",
+    image: "/assets/team/ManuelQuinones.jpg",
+    description: "Magíster en sistemas digitales...",
+    mdFile: "equipo/manuel-quinones.md",
+    email: "maquinones@utpl.edu.ec",
+    linkedin: "https://investigacion.utpl.edu.ec/"
+  },
+  {
+    name: "Alexandra Moncayo",
+    role: "INVESTIGADORA UTPL",
+    image: "/assets/team/AlexandraMoncayo.jpg",
+    description: "Maestra en Arquitectura y especialista en Diseño de Paisaje...",
+    mdFile: "equipo/alexandra-moncayo.md",
+    email: "amoncayo@utpl.edu.ec",
     linkedin: "https://investigacion.utpl.edu.ec/"
   }
 ];

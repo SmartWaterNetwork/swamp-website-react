@@ -1,0 +1,1 @@
+Es Doctor en Ingeniería Civil por la Universidad de Granada, España. Línea de investigación: Hidráulica Computacional. Máster en Ingeniería Geológica aplicada a la obra Civil por la Universidad de Granada, España. Ingeniero Civil y docente Universitario del Departamento de Ingeniería Civil, Universidad Técnica Particular de Loja.

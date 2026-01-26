@@ -13,7 +13,7 @@ const QuienesSomos: React.FC = () => {
         <h2 className="text-2xl font-semibold text-gray-800 dark:text-white mb-8">
           Innovación y desarrollo para la sostenibilidad del ciclo urbano y rural del agua
         </h2>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12 bg-gray-100 dark:bg-gray-800 p-8 rounded-xl border border-gray-200 dark:border-gray-700">
           <div>
             <span className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-1">Epígrafe</span>
@@ -57,7 +57,7 @@ const QuienesSomos: React.FC = () => {
         </div>
 
         <div className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-md border-l-4 border-primary relative overflow-hidden group">
-           <span className="material-icons absolute top-4 right-4 text-6xl text-gray-100 dark:text-gray-700/50 group-hover:scale-110 transition-transform">water_drop</span>
+          <span className="material-icons absolute top-4 right-4 text-6xl text-gray-100 dark:text-gray-700/50 group-hover:scale-110 transition-transform">water_drop</span>
           <h4 className="inline-block bg-primary text-gray-900 text-xs font-bold uppercase px-3 py-1 rounded mb-6">Campos de Estudio</h4>
           <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-300 relative z-10 columns-1">
             <li>• Áreas protegidas y deforestación.</li>
