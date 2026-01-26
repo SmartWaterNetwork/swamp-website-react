@@ -3,25 +3,32 @@ import React, { useState, useEffect } from 'react';
 
 const SLIDES = [
   {
+    image: "/assets/hero/slide-1.jpg",
+    title: "Smart Water Network Team",
+    description: "Investigadores dedicados a la gestión inteligente del agua en la UTPL."
+  },
+  {
+    image: "/assets/hero/slide-2.jpg",
+    /*title: "Oportunidades de Investigación",
+    description: "Únete a nuestro equipo y participa en proyectos de innovación hídrica."*/
+    title: "",
+    description: ""
+  },
+  {
+    image: "/assets/hero/slide-3.jpg",
+    title: "Tecnología de Medición",
+    description: "Equipamiento avanzado para experimentos y monitoreo en tiempo real."
+  },
+  {
     image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1200",
     title: "Investigación de vanguardia",
     description: "Desarrollando soluciones inteligentes para la gestión del agua."
-  },
+  }/*,
   {
     image: "https://images.unsplash.com/photo-1544377193-33dcf4d68fb5?auto=format&fit=crop&q=80&w=1200",
     title: "Tecnología y Sostenibilidad",
     description: "Integrando sensores y análisis de datos en tiempo real."
-  },
-  {
-    image: "https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?auto=format&fit=crop&q=80&w=1200",
-    title: "Laboratorio Virtual",
-    description: "Experimentos interactivos accesibles desde cualquier lugar."
-  },
-  {
-    image: "https://images.unsplash.com/photo-1468413927635-132dd0d724d2?auto=format&fit=crop&q=80&w=1200",
-    title: "Compromiso Académico",
-    description: "Formando a los futuros líderes en ingeniería hidráulica."
-  }
+  }*/
 ];
 
 const Home: React.FC = () => {
