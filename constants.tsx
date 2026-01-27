@@ -310,5 +310,69 @@ export const ACADEMIC_VIDEOS: AcademicVideo[] = [
     duration: "21:05",
     category: "TUTORIALES",
     mdFile: "recursos-academicos/videos/instalaciones-cype-1.md"
+  },
+  {
+    title: "Instalaciones hidrosanitarias en edificios con CYPE. Parte 2",
+    thumbnail: "/assets/recursos/videos/CYPE_Parte2.jpg",
+    videoUrl: "https://www.youtube.com/watch?v=t7no8o4Qf0I",
+    duration: "18:45",
+    category: "TUTORIALES",
+    mdFile: "recursos-academicos/videos/instalaciones-cype-2.md"
+  },
+  {
+    title: "Instalaciones hidrosanitarias en edificios con CYPE. Parte 3",
+    thumbnail: "/assets/recursos/videos/CYPE_Parte3.jpg",
+    videoUrl: "https://www.youtube.com/watch?v=hZhv_VlsDT0",
+    duration: "25:30",
+    category: "TUTORIALES",
+    mdFile: "recursos-academicos/videos/instalaciones-cype-3.md"
+  },
+  {
+    title: "Agua y ciudad. Cumplimiento de los ODS",
+    thumbnail: "/assets/recursos/videos/Agua_Ciudad.jpg",
+    videoUrl: "https://www.youtube.com/watch?v=8tjRTrNEXfc",
+    duration: "12:10",
+    category: "CONFERENCIAS",
+    mdFile: "recursos-academicos/videos/agua-ciudad-ods.md"
+  },/*,
+  {
+    title: "Los sistemas de riego y su gestión",
+    thumbnail: "/assets/recursos/videos/Sistemas_Riego.jpg",
+    videoUrl: "https://www.facebook.com/watch/?v=4245974238754035",
+    duration: "45:00",
+    category: "WEBINAR",
+    mdFile: "recursos-academicos/videos/sistemas-riego-gestion.md"
+  },
+  {
+    title: "Territorios inteligentes e innovación",
+    thumbnail: "/assets/recursos/videos/Territorios_Inteligentes.jpg",
+    videoUrl: "https://www.facebook.com/cceloja/videos/1075757543372781",
+    duration: "55:20",
+    category: "WEBINAR",
+    mdFile: "recursos-academicos/videos/territorios-inteligentes.md"
+  },
+  {
+    title: "Monitoreo del clima del valle de Loja",
+    thumbnail: "/assets/recursos/videos/Monitoreo_Clima.jpg",
+    videoUrl: "https://www.facebook.com/cceloja",
+    duration: "30:00",
+    category: "WEBINAR",
+    mdFile: "recursos-academicos/videos/monitoreo-clima-loja.md"
+  },
+  {
+    title: "Cuencas hidrográficas desde el espacio",
+    thumbnail: "/assets/recursos/videos/Cuencas_Espacio.jpg",
+    videoUrl: "https://www.facebook.com/watch/live/?v=583414762947839",
+    duration: "40:15",
+    category: "WEBINAR",
+    mdFile: "recursos-academicos/videos/cuencas-espacio.md"
+  },*/
+  {
+    title: "Transporte urbano masivo para Loja",
+    thumbnail: "/assets/recursos/videos/Transporte_Loja.jpg",
+    videoUrl: "https://www.youtube.com/watch?v=C55EcMZOlDw",
+    duration: "10:30",
+    category: "CONFERENCIAS",
+    mdFile: "recursos-academicos/videos/transporte-urbano-loja.md"
   }
 ];
