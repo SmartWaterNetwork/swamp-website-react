@@ -32,7 +32,7 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               <p className="flex justify-end gap-2 items-start"><span className="text-right">Ecuador</span> <span className="material-icons text-primary text-lg">location_on</span></p>
               <p className="text-right leading-relaxed"><span className="font-semibold text-white">Dirección:</span> Marcelino Champagnat s/n</p>
               <p className="text-right"><span className="font-semibold text-white">Teléfono:</span> +593 3701444</p>
-              <p className="text-right underline decoration-primary/50"><span className="font-semibold text-white">Email:</span> swampa@utpl.edu.ec</p>
+              <p className="text-right underline decoration-primary/50"><span className="font-semibold text-white">Email:</span> hmbenavides@utpl.edu.ec</p>
             </address>
           </div>
 
@@ -75,7 +75,7 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
         </div>
 
         <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
-          <p>Copyright © 2026. Theme by <span className="text-white">Devsaran</span>.</p>
+          <p>Copyright © 2026. <span className="text-white">UTPL</span>.</p>
         </div>
       </div>
     </footer>
