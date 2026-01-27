@@ -29,7 +29,7 @@ const RecursosAcademicos: React.FC = () => {
   };
 
   const filteredResources = ACADEMIC_RESOURCES.filter(r =>
-    categoryFilter === 'Cualquiera' || r.category === categoryFilter
+    categoryFilter === 'Cualquiera' || (r.type || r.category) === categoryFilter
   );
 
   const filteredVideos = ACADEMIC_VIDEOS.filter(v =>
@@ -37,7 +37,7 @@ const RecursosAcademicos: React.FC = () => {
   );
 
   const categories = activeTab === 'PUBLICACIONES'
-    ? ['Cualquiera', ...Array.from(new Set(ACADEMIC_RESOURCES.map(r => r.category)))]
+    ? ['Cualquiera', ...Array.from(new Set(ACADEMIC_RESOURCES.map(r => r.type || r.category)))]
     : ['Cualquiera', ...Array.from(new Set(ACADEMIC_VIDEOS.map(v => v.category)))];
 
   if (selectedItem) {
@@ -184,42 +184,73 @@ const RecursosAcademicos: React.FC = () => {
       </div>
 
       {activeTab === 'PUBLICACIONES' ? (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {filteredResources.map((resource, idx) => (
             <div
               key={idx}
-              className="group bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 flex flex-col h-full overflow-hidden hover:shadow-xl transition-all duration-300"
+              className="group bg-white dark:bg-gray-800 rounded-3xl shadow-sm border border-gray-100 dark:border-gray-700 flex flex-col h-full overflow-hidden hover:shadow-2xl transition-all duration-500"
             >
-              <div className="relative h-64 overflow-hidden">
+              {/* Vertical Image Container (Book Style) */}
+              <div
+                className="relative aspect-[3/4] overflow-hidden bg-gray-50 dark:bg-gray-900 cursor-pointer"
+                onClick={() => setSelectedItem(resource)}
+              >
                 <img
                   src={resource.image}
                   alt={resource.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
                 />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-500 flex items-center justify-center">
+                  <div className="bg-white/90 backdrop-blur scale-0 group-hover:scale-100 transition-transform duration-500 p-4 rounded-full shadow-2xl">
+                    <span className="material-symbols-outlined text-primary text-3xl">visibility</span>
+                  </div>
+                </div>
               </div>
+
               <div className="p-8 flex flex-col flex-grow">
-                <span className="text-[10px] font-bold text-primary uppercase tracking-widest mb-2">
-                  {resource.category}
-                </span>
-                <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-4 line-clamp-2 leading-snug">
+                <div className="flex justify-between items-start mb-4">
+                  <span className="text-[10px] font-bold text-primary border border-primary/20 px-2 py-1 rounded uppercase tracking-widest">
+                    {resource.type || resource.category}
+                  </span>
+                  {resource.year && (
+                    <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">
+                      {resource.year}
+                    </span>
+                  )}
+                </div>
+
+                <h3
+                  className="text-xl font-bold text-gray-900 dark:text-white mb-4 line-clamp-3 leading-tight group-hover:text-primary transition-colors cursor-pointer"
+                  onClick={() => setSelectedItem(resource)}
+                >
                   {resource.title}
                 </h3>
-                <p className="text-gray-500 dark:text-gray-400 text-xs mb-6 line-clamp-3">
+
+                {resource.authors && (
+                  <p className="text-gray-500 dark:text-gray-400 text-xs italic mb-4 line-clamp-2">
+                    {resource.authors}
+                  </p>
+                )}
+
+                <p className="text-gray-400 dark:text-gray-500 text-xs mb-8 line-clamp-3 leading-relaxed">
                   {resource.description}
                 </p>
-                <div className="mt-auto pt-6 border-t border-gray-50 dark:border-gray-700 flex justify-between items-center">
+
+                <div className="mt-auto pt-6 border-t border-gray-50 dark:border-gray-800 flex justify-between items-center">
                   <button
                     onClick={() => setSelectedItem(resource)}
-                    className="text-primary font-bold text-[10px] uppercase tracking-widest hover:underline"
+                    className="flex items-center text-primary font-bold text-[10px] uppercase tracking-widest hover:translate-x-1 transition-transform"
                   >
-                    Información
+                    MÁS INFORMACIÓN
+                    <span className="material-symbols-outlined text-sm ml-1">chevron_right</span>
                   </button>
                   {resource.pdfFile && (
                     <button
-                      onClick={() => handleDownload(resource.pdfFile)}
-                      className="w-8 h-8 rounded-full bg-gray-50 dark:bg-gray-700 flex items-center justify-center text-gray-400 hover:text-primary transition-colors"
+                      onClick={(e) => { e.stopPropagation(); handleDownload(resource.pdfFile); }}
+                      className="w-10 h-10 rounded-xl bg-gray-50 dark:bg-gray-700 flex items-center justify-center text-gray-400 hover:text-white hover:bg-primary transition-all shadow-sm"
+                      title="Descargar PDF"
                     >
-                      <span className="material-symbols-outlined text-lg">download</span>
+                      <span className="material-symbols-outlined text-xl">download</span>
                     </button>
                   )}
                 </div>
