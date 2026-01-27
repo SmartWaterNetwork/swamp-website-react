@@ -140,7 +140,7 @@ export const PROJECTS: Project[] = [
     status: "FINALIZADO",
     authors: "Holger Benavides Muñoz, Sonia Gonzaga Valllejo, Alonso Zúñiga Suárez, Víctor Hugo González, Santiago Quiñones Cuenca.",
     file: "/docs/investigacion/informe_drenaje_vial.pdf",
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAWb1w5768WN-DheBLU68h1q_l3FntGD4CwgAQvHhhRq0a77PwY_nfe0O85rT1aSRmu4I966T4FE1zE38nkHw9XPVwBY7GARpSWYoVQDwBgxWkVhcoPuHzZj4FCOR6HAcB_TjfGOeFAiA1NWgR8qVpXHiktfMytkdWGJfw4xzFrsaCarwpHjdvmLhfuGC4ISwPCB92vpL3EQyTl93aAj5v4NsUgpk36sLM_NFeHXeYkYgUnouwQ7jTEiiMRNzEBHbqmP3Ytx2Pumw",
+    image: "/assets/investigacion/drenaje-loja-zamora.jpg",
     mdFile: "investigacion/drenaje-vial-loja-zamora.md"
   },
   {
@@ -153,7 +153,7 @@ export const PROJECTS: Project[] = [
     image: "/assets/investigacion/conferencia_agua_ciudad.jpg",
     mdFile: "investigacion/conferencia-agua-ciudad-ods.md",
     date: "20 de Septiembre, 2022"
-  },
+  }/*,
   {
     title: "Ponencia: Tecnologías emergentes en Hidrología",
     description: "Exploración de innovaciones tecnológicas como sensores IoT de bajo costo, gemelos digitales y modelos predictivos para la optimización de redes de distribución de agua potable.",
@@ -163,7 +163,7 @@ export const PROJECTS: Project[] = [
     file: "#",
     image: "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&q=80&w=800",
     date: "15 de Noviembre, 2023"
-  }
+  }*/
 ];
 
 export const ACADEMIC_RESOURCES: AcademicResource[] = [
