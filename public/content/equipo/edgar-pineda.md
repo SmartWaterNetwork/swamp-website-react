@@ -1,0 +1,1 @@
+Doctor en Ingeniería Civil, línea de investigación: Tratamiento y depuración de aguas, Universidad de Granada España. Máster en Ingeniería Geológica aplicada a la obra Civil, línea de investigación: Geoquímica ambiental, Universidad de Granada España. Ingeniero Civil, Universidad Técnica Particular de Loja. Docente Universitario e Investigador UTPL.

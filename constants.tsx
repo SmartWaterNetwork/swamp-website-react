@@ -9,7 +9,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     description: "Doctorando en Ciencia y Tecnología Ambiental Universidad de la Coruña-España...",
     mdFile: "equipo/silvio-aguilar.md",
     email: "saguilar@utpl.edu.ec",
-    linkedin: "https://investigacion.utpl.edu.ec/"
+    linkedin: "https://investigacion.utpl.edu.ec/sdaguilar"
   },
   {
     name: "Eduardo Carrión Coronel",
@@ -18,7 +18,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     description: "Doctor en Ingeniería Civil por la Universidad de Granada, España...",
     mdFile: "equipo/eduardo-carrion.md",
     email: "eecarrion@utpl.edu.ec",
-    linkedin: "https://investigacion.utpl.edu.ec/"
+    linkedin: "https://investigacion.utpl.edu.ec/efcarrion"
   },
   {
     name: "Holger Benavides Muñoz",
@@ -36,7 +36,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     description: "Máster en Ingeniería de Software y Sistemas Informáticos por la UNIR...",
     mdFile: "equipo/santiago-quinones.md",
     email: "saquinones@utpl.edu.ec",
-    linkedin: "https://investigacion.utpl.edu.ec/"
+    linkedin: "https://investigacion.utpl.edu.ec/lsquinones"
   },
   {
     name: "Fausto Vinicio López Rodríguez",
@@ -45,7 +45,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     description: "Doctor en Gestión y Conservación del Mar...",
     mdFile: "equipo/fausto-lopez.md",
     email: "fvlopez@utpl.edu.ec",
-    linkedin: "https://investigacion.utpl.edu.ec/"
+    linkedin: "https://investigacion.utpl.edu.ec/fvlopezx"
   },
   {
     name: "Mireya Lapo",
@@ -54,7 +54,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     description: "Doctora en Ingeniería del Agua y Medioambiental...",
     mdFile: "equipo/mireya-lapo.md",
     email: "mclapo@utpl.edu.ec",
-    linkedin: "https://investigacion.utpl.edu.ec/"
+    linkedin: "https://investigacion.utpl.edu.ec/cmlapo"
   },
   {
     name: "Manuel Quiñones C.",
@@ -63,7 +63,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     description: "Magíster en sistemas digitales...",
     mdFile: "equipo/manuel-quinones.md",
     email: "maquinones@utpl.edu.ec",
-    linkedin: "https://investigacion.utpl.edu.ec/"
+    linkedin: "https://investigacion.utpl.edu.ec/mfquinonez"
   },
   {
     name: "Alexandra Moncayo",
@@ -72,7 +72,16 @@ export const TEAM_MEMBERS: TeamMember[] = [
     description: "Maestra en Arquitectura y especialista en Diseño de Paisaje...",
     mdFile: "equipo/alexandra-moncayo.md",
     email: "amoncayo@utpl.edu.ec",
-    linkedin: "https://investigacion.utpl.edu.ec/"
+    linkedin: "https://investigacion.utpl.edu.ec/admoncayo"
+  },
+  {
+    name: "Edgar Pineda",
+    role: "INVESTIGADOR UTPL",
+    image: "/assets/team/EdgarPineda.jpg",
+    description: "Doctor en Ingeniería Civil",
+    mdFile: "equipo/edgar-pineda.md",
+    email: "eipineda@utpl.edu.ec",
+    linkedin: "https://investigacion.utpl.edu.ec/eipineda"
   }
 ];
 
