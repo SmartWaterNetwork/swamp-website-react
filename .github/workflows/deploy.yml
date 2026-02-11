@@ -7,42 +7,36 @@ on:
 jobs:
   build-and-deploy:
     runs-on: self-hosted
-    # Utilizamos la variable de entorno del sistema para definir la ruta de trabajo
-    # Esto mantiene la privacidad de tus rutas en GitHub
-    defaults:
-      run:
-        working-directory: ${{ env.SWAMP_APP_PATH }}
 
     steps:
       - name: Checkout del código
         uses: actions/checkout@v4
         with:
-          # El punto indica que descargue el contenido en el directorio actual definido arriba
-          path: .
-          # Mantiene la integridad eliminando archivos que ya no existen en el repositorio
+          # Mantiene la carpeta limpia antes de la descarga
           clean: true
 
-      - name: Instalar dependencias
-        # 'call' es vital para que el Runner no se cierre tras ejecutar npm en Windows
-        run: call npm install
-
-      - name: Construir aplicación (Build)
-        run: call npm run build
+      - name: Instalar y Construir
+        shell: cmd
+        run: |
+          echo === Trabajando en el Workspace del Runner ===
+          :: Instalamos y generamos la carpeta 'dist' aquí mismo
+          call npm install
+          call npm run build
 
       - name: Despliegue con PM2
         shell: cmd
         run: |
-          echo === Actualizando PM2 en %SWAMP_APP_PATH% ===
+          echo === Actualizando PM2 ===
           
-          :: Limpiar instancia previa para evitar conflictos de archivos bloqueados
+          :: Borramos la instancia previa para evitar conflictos de puerto
           call pm2 delete swamp-website || echo "Nada que borrar"
           
-          :: Iniciar la app apuntando a la carpeta dist recién generada
-          :: Esto asegura que el estado pase a 'online' con un nuevo PID
-          call pm2 start "%SWAMP_SERVE_JS%" --name "swamp-website" -- -s "%SWAMP_APP_PATH%\dist" -l 3000
+          :: Iniciamos usando la ruta dinamica de GitHub Workspace
+          :: Esto apunta a C:\actions-runner\_work\swamp-website-react\swamp-website-react\dist
+          call pm2 start "%SWAMP_SERVE_JS%" --name "swamp-website" -- -s "%GITHUB_WORKSPACE%\dist" -l 3000
           
-          :: Guardar configuración para persistencia tras reinicios del servidor
+          :: Guardamos para que el proceso sea persistente
           call pm2 save
           
-          :: Mostrar tabla de procesos final en el log de GitHub
+          :: Verificamos que el estado sea 'online'
           call pm2 list
