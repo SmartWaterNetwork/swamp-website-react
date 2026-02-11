@@ -31,7 +31,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
   },
   {
     name: "Santiago Quiñones C.",
-    role: "DOCENTE INVESTIGADOR",
+    role: "INVESTIGADOR UTPL",
     image: "/assets/team/SantiagoQuinones.png",
     description: "Máster en Ingeniería de Software y Sistemas Informáticos por la UNIR...",
     mdFile: "equipo/santiago-quinones.md",

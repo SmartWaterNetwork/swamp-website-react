@@ -1,0 +1,42 @@
+name: SWAMP Deployment Pipeline
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build-and-deploy:
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout del código
+        uses: actions/checkout@v4
+
+      - name: Instalar y Construir
+        run: |
+          npm install
+          npm run build
+
+      - name: Despliegue Seguro
+        shell: cmd
+        run: |
+          :: Liberar puerto 80
+          net stop w3svc /y
+          net stop iisadmin /y
+          net stop ReportServer /y
+
+          :: Detener servicios
+          pm2 stop swamp-website || echo "Nada que detener"
+          taskkill /f /im nginx.exe /t || echo "Nginx no estaba corriendo"
+          
+          :: Limpiar usando la variable que acabas de validar
+          if exist "%SWAMP_APP_PATH%\dist" rd /s /q "%SWAMP_APP_PATH%\dist"
+
+          :: Iniciar Nginx
+          cd /d "%SWAMP_NGINX_PATH%"
+          start nginx.exe
+          
+          :: Levantar app con PM2
+          pm2 delete swamp-website || echo "Nada que borrar"
+          pm2 start "%SWAMP_SERVE_JS%" --name "swamp-website" -- -s "%SWAMP_APP_PATH%\dist" -l 3000
+          pm2 save
