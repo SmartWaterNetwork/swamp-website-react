@@ -1,23 +1,44 @@
-- name: Despliegue Seguro
+name: SWAMP Deployment Pipeline
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build-and-deploy:
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout del código
+        uses: actions/checkout@v4
+
+      - name: Instalar dependencias
+        run: npm install
+
+      - name: Construir aplicación (Build)
+        run: npm run build
+
+      - name: Despliegue Seguro
         shell: cmd
         run: |
-          :: 1. Liberar puerto 80
+          echo === 1. Liberando puerto 80 ===
           net stop w3svc /y || ver > nul
           net stop iisadmin /y || ver > nul
           net stop ReportServer /y || ver > nul
 
-          :: 2. Reiniciar Nginx usando variables
-          taskkill /f /im nginx.exe /t || echo Nginx no corria
+          echo === 2. Reiniciando Nginx ===
+          :: Forzamos el cierre para aplicar cambios y liberar el puerto
+          taskkill /f /im nginx.exe /t || echo Nginx no estaba corriendo
           cd /d "%SWAMP_NGINX_PATH%"
           start nginx.exe
 
-          :: 3. El cambio clave: USAR 'CALL' CON LAS VARIABLES
-          :: Sin 'call', el script se detiene al ejecutar pm2 y no llega al start
+          echo === 3. Iniciando Aplicacion con PM2 (Modo Script Local) ===
+          :: Usamos 'call' para que el pipeline no se detenga tras ejecutar el comando .cmd de PM2
           call pm2 delete swamp-website || echo "Nada que borrar"
           
-          :: Iniciar con variables (Rutas ocultas en GitHub) [cite: 2026-02-06]
+          :: Iniciamos usando las variables de entorno para mantener la privacidad
           call pm2 start "%SWAMP_SERVE_JS%" --name "swamp-website" -- -s "%SWAMP_APP_PATH%\dist" -l 3000
 
-          :: 4. Persistir y mostrar
+          echo === 4. Guardando estado y verificando ===
           call pm2 save
           call pm2 list
