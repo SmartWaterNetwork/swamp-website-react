@@ -6,7 +6,7 @@ on:
 
 jobs:
   build-and-deploy:
-    runs-on: self-hosted
+    runs-on: self-hosted # Ejecuta en tu servidor UTPL-SERVER-SWAMP
 
     steps:
       - name: Checkout del código
@@ -18,27 +18,22 @@ jobs:
       - name: Construir aplicación (Build)
         run: npm run build
 
-      - name: Despliegue Seguro
+      - name: Despliegue de Aplicación (PM2)
         shell: cmd
         run: |
-          echo === 1. Liberando puerto 80 ===
-          net stop w3svc /y || ver > nul
-          net stop iisadmin /y || ver > nul
-          net stop ReportServer /y || ver > nul
-
-          echo === 2. Reiniciando Nginx ===
-          :: Forzamos el cierre para aplicar cambios y liberar el puerto
-          taskkill /f /im nginx.exe /t || echo Nginx no estaba corriendo
-          cd /d "%SWAMP_NGINX_PATH%"
-          start nginx.exe
-
-          echo === 3. Iniciando Aplicacion con PM2 (Modo Script Local) ===
-          :: Usamos 'call' para que el pipeline no se detenga tras ejecutar el comando .cmd de PM2
+          echo === 1. Actualizando Aplicacion con PM2 ===
+          :: No reiniciamos Nginx para evitar conflictos de permisos, ya que corre estable manualmente
+          
+          :: Limpieza de la instancia previa para asegurar un arranque limpio
           call pm2 delete swamp-website || echo "Nada que borrar"
           
-          :: Iniciamos usando las variables de entorno para mantener la privacidad
+          :: Iniciar usando las variables de entorno para mantener la privacidad de las rutas
+          :: Se mantiene el puerto 3000 que es el configurado en tu Proxy de Nginx
           call pm2 start "%SWAMP_SERVE_JS%" --name "swamp-website" -- -s "%SWAMP_APP_PATH%\dist" -l 3000
 
-          echo === 4. Guardando estado y verificando ===
+          echo === 2. Guardando estado y verificando ===
+          :: Persistimos el estado para que la app inicie sola tras reinicios del sistema
           call pm2 save
+          
+          :: Mostramos el estado final para confirmar el estado 'online'
           call pm2 list
