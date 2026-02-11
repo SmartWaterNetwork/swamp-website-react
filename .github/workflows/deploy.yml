@@ -21,25 +21,29 @@ jobs:
       - name: Despliegue Seguro
         shell: cmd
         run: |
-          :: 1. Liberar puerto 80 (Detener IIS y otros servicios)
+          :: 1. Liberar puerto 80
           net stop w3svc /y || ver > nul
           net stop iisadmin /y || ver > nul
           net stop ReportServer /y || ver > nul
 
-          :: 2. Detener y limpiar procesos previos para evitar bloqueos
-          pm2 stop swamp-website || echo "Nada que detener"
+          :: 2. Limpieza total de PM2 y Nginx para evitar bloqueos
+          pm2 stop swamp-website || echo "Ya estaba detenido"
           pm2 delete swamp-website || echo "Nada que borrar"
-          taskkill /f /im nginx.exe /t || echo "Nginx no estaba corriendo"
+          taskkill /f /im nginx.exe /t || echo "Nginx no corria"
           
-          :: 3. Limpiar carpeta de destino usando tu variable de entorno
+          :: 3. Limpiar carpeta de produccion
           if exist "%SWAMP_APP_PATH%\dist" rd /s /q "%SWAMP_APP_PATH%\dist"
 
-          :: 4. Reiniciar Nginx (Mantiene tu configuración de seguridad A+)
+          :: 4. Reiniciar Nginx
           cd /d "%SWAMP_NGINX_PATH%"
           start nginx.exe
           
-          :: 5. INICIAR LA APLICACIÓN (Este paso activa el estado 'online')
+          :: 5. INICIAR Y VALIDAR (Este es el cambio critico)
           pm2 start "%SWAMP_SERVE_JS%" --name "swamp-website" -- -s "%SWAMP_APP_PATH%\dist" -l 3000
           
-          :: 6. Guardar estado para que inicie solo tras reinicios del servidor
+          :: Esperar 2 segundos para que el proceso asiente
+          timeout /t 2 /nobreak > nul
+          
+          :: 6. Guardar y mostrar estado final
           pm2 save
+          pm2 status
