@@ -6,37 +6,41 @@ on:
 
 jobs:
   build-and-deploy:
-    runs-on: self-hosted
+    runs-on: self-hosted # Ejecuta en el runner que instalamos en C:\actions-runner
 
     steps:
       - name: Checkout del código
         uses: actions/checkout@v4
 
-      - name: Instalar y Construir
-        run: |
-          npm install
-          npm run build
+      - name: Instalar dependencias
+        run: npm install
 
-      - name: Despliegue Seguro
+      - name: Construir aplicación (Build)
+        run: npm run build
+
+      - name: Despliegue en Producción
         shell: cmd
         run: |
-          :: Liberar puerto 80
-          net stop w3svc /y
-          net stop iisadmin /y
-          net stop ReportServer /y
+          :: 1. Liberar puerto 80 (Detener IIS y otros)
+          net stop w3svc /y || ver > nul
+          net stop iisadmin /y || ver > nul
+          net stop ReportServer /y || ver > nul
 
-          :: Detener servicios
-          pm2 stop swamp-website || echo "Nada que detener"
+          :: 2. Detener procesos actuales usando variables del sistema
+          pm2 stop swamp-website || echo "La app no estaba corriendo"
           taskkill /f /im nginx.exe /t || echo "Nginx no estaba corriendo"
           
-          :: Limpiar usando la variable que acabas de validar
+          :: 3. Limpiar carpeta dist (usando tu variable validada) [cite: 2026-02-06]
           if exist "%SWAMP_APP_PATH%\dist" rd /s /q "%SWAMP_APP_PATH%\dist"
 
-          :: Iniciar Nginx
+          :: 4. Reiniciar Nginx (Mantiene configuración A+)
           cd /d "%SWAMP_NGINX_PATH%"
           start nginx.exe
           
-          :: Levantar app con PM2
+          :: 5. Iniciar la aplicación con PM2
+          :: Usamos la ruta de main.js que validamos en tu servidor
           pm2 delete swamp-website || echo "Nada que borrar"
           pm2 start "%SWAMP_SERVE_JS%" --name "swamp-website" -- -s "%SWAMP_APP_PATH%\dist" -l 3000
+          
+          :: 6. Persistir cambios para reinicios
           pm2 save
