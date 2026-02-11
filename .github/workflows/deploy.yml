@@ -1,24 +1,4 @@
-name: SWAMP Deployment Pipeline
-
-on:
-  push:
-    branches: [ main ]
-
-jobs:
-  build-and-deploy:
-    runs-on: self-hosted
-
-    steps:
-      - name: Checkout del código
-        uses: actions/checkout@v4
-
-      - name: Instalar dependencias
-        run: npm install
-
-      - name: Construir aplicación (Build)
-        run: npm run build
-
-      - name: Despliegue Seguro
+- name: Despliegue Seguro
         shell: cmd
         run: |
           :: 1. Liberar puerto 80
@@ -26,24 +6,18 @@ jobs:
           net stop iisadmin /y || ver > nul
           net stop ReportServer /y || ver > nul
 
-          :: 2. Limpieza total de PM2 y Nginx para evitar bloqueos
-          pm2 stop swamp-website || echo "Ya estaba detenido"
-          pm2 delete swamp-website || echo "Nada que borrar"
-          taskkill /f /im nginx.exe /t || echo "Nginx no corria"
-          
-          :: 3. Limpiar carpeta de produccion
-          if exist "%SWAMP_APP_PATH%\dist" rd /s /q "%SWAMP_APP_PATH%\dist"
-
-          :: 4. Reiniciar Nginx
+          :: 2. Reiniciar Nginx usando variables
+          taskkill /f /im nginx.exe /t || echo Nginx no corria
           cd /d "%SWAMP_NGINX_PATH%"
           start nginx.exe
+
+          :: 3. El cambio clave: USAR 'CALL' CON LAS VARIABLES
+          :: Sin 'call', el script se detiene al ejecutar pm2 y no llega al start
+          call pm2 delete swamp-website || echo "Nada que borrar"
           
-          :: 5. INICIAR Y VALIDAR (Este es el cambio critico)
-          pm2 start "%SWAMP_SERVE_JS%" --name "swamp-website" -- -s "%SWAMP_APP_PATH%\dist" -l 3000
-          
-          :: Esperar 2 segundos para que el proceso asiente
-          timeout /t 2 /nobreak > nul
-          
-          :: 6. Guardar y mostrar estado final
-          pm2 save
-          pm2 status
+          :: Iniciar con variables (Rutas ocultas en GitHub) [cite: 2026-02-06]
+          call pm2 start "%SWAMP_SERVE_JS%" --name "swamp-website" -- -s "%SWAMP_APP_PATH%\dist" -l 3000
+
+          :: 4. Persistir y mostrar
+          call pm2 save
+          call pm2 list
