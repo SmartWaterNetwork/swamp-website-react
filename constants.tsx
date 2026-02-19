@@ -100,7 +100,7 @@ export const SOFTWARE_LIST: Software[] = [
     description: "La presente herramienta informática tiene como finalidad simular la evolución del transitorio a través del tiempo, en un sistema de conducción simple y un sistema de bombeo, en base a las propiedades hidráulicas de los elementos y componentes de los sistemas hidráulicos.",
     image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDEnyJOetAvQV995YBlqDvL8KcOu195t4bgYuXMBpp2jq9FlPS80zEIJR1wPE8f45DiqYi7a5e793o4w6HJx3gVpMlvUgfhJXDE20t6GV8zbN7QTFkIkjMCqoP0oirSopg5Fij0XvBz8RK__MhLvkYx5i0RHdz4tAYrOkNiAqGpqTAPkRjVLsRzoiUV3YZS_0PHpi3KBny5ja1dngHAUqFuAM_PdXjNxQJRQswNAmkevaCar8NRx3o1ilO6ecZyyNHzO4CsAzyU5g",
     icon: "waves",
-    url: "http://200.0.29.31:8080/"
+    url: "http://201.159.222.179:9090/"
   },
   {
     id: "dhycob",
