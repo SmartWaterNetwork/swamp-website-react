@@ -46,6 +46,7 @@ jobs:
           
           if %ERRORLEVEL% LSS 8 (
               echo === Despliegue completado con éxito en D:\APP\swamp-website-react ===
+              exit /b 0
           ) else (
               echo === ERROR fatal durante la copia (Código Robocopy: %ERRORLEVEL%) ===
               exit /b %ERRORLEVEL%
