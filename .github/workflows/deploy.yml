@@ -12,46 +12,41 @@ jobs:
       - name: Checkout del código
         uses: actions/checkout@v4
         with:
-          # Desactivamos clean automático porque falla si PM2 bloquea archivos
-          clean: false
-
-      - name: Liberar puerto y archivos bloqueados (Windows Fix)
-        shell: cmd
-        run: |
-          echo === Deteniendo servidores para liberar archivos ===
-          :: Intentar matar el proceso por nombre de PM2
-          call pm2 stop swamp-website || echo "Ya detenido"
-          call pm2 delete swamp-website || echo "Nada que borrar"
-          
-          :: Fuerza bruta: matar cualquier proceso que use el puerto 3000 (Vite/Serve)
-          for /f "tokens=5" %%a in ('netstat -aon ^| findstr :3000') do taskkill /f /pid %%a || echo "No hay procesos en puerto 3000"
-          
-          :: Ahora que el puerto está libre, forzamos limpieza manual si es necesario
-          :: (Solo borramos dist, el checkout se encargará del resto)
-          if exist "%GITHUB_WORKSPACE%\dist" rmdir /s /q "%GITHUB_WORKSPACE%\dist"
+          # Se reactiva cleanup automático ya que PM2 no bloqueará los archivos
+          clean: true
 
       - name: Instalar y Construir
         shell: cmd
         run: |
           echo === Trabajando en el Workspace del Runner ===
-          :: Instalamos y generamos la carpeta 'dist' aquí mismo
+          :: Instalamos y generamos la carpeta 'dist'
           call npm install
           call npm run build
 
-      - name: Despliegue con PM2
+      - name: Despliegue al servidor (Copia de Build)
         shell: cmd
         run: |
-          echo === Actualizando PM2 ===
+          echo === Copiando build a D:\APP\swamp-website-react ===
           
-          :: Borramos la instancia previa para evitar conflictos de puerto
-          call pm2 delete swamp-website || echo "Nada que borrar"
+          :: Verificar existencia del origen
+          if not exist "%GITHUB_WORKSPACE%\dist" (
+              echo ERROR: No se encontró la carpeta dist generada por el build.
+              exit /b 1
+          )
+
+          :: Crear el directorio de destino si no existe
+          if not exist "D:\APP\swamp-website-react" mkdir "D:\APP\swamp-website-react"
           
-          :: Iniciamos usando la ruta dinamica de GitHub Workspace
-          :: Esto apunta a C:\actions-runner\_work\swamp-website-react\swamp-website-react\dist
-          call pm2 start "%SWAMP_SERVE_JS%" --name "swamp-website" -- -s "%GITHUB_WORKSPACE%\dist" -l 3000
+          :: Usar robocopy para sincronizar la carpeta 'dist' con el destino
+          :: /MIR: Espejo (Mirror), mantiene el destino idéntico al origen
+          :: /R:3: 3 reintentos en caso de archivos bloqueados
+          :: /W:5: 5 segundos de espera entre reintentos
+          :: IMPORTANTE: robocopy devuelve códigos 0-7 para éxito. >=8 es falla.
+          robocopy "%GITHUB_WORKSPACE%\dist" "D:\APP\swamp-website-react" /MIR /R:3 /W:5
           
-          :: Guardamos para que el proceso sea persistente
-          call pm2 save
-          
-          :: Verificamos que el estado sea 'online'
-          call pm2 list
+          if %ERRORLEVEL% LSS 8 (
+              echo === Despliegue completado con éxito en D:\APP\swamp-website-react ===
+          ) else (
+              echo === ERROR fatal durante la copia (Código Robocopy: %ERRORLEVEL%) ===
+              exit /b %ERRORLEVEL%
+          )
