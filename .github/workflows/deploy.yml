@@ -12,8 +12,23 @@ jobs:
       - name: Checkout del código
         uses: actions/checkout@v4
         with:
-          # Mantiene la carpeta limpia antes de la descarga
-          clean: true
+          # Desactivamos clean automático porque falla si PM2 bloquea archivos
+          clean: false
+
+      - name: Liberar puerto y archivos bloqueados (Windows Fix)
+        shell: cmd
+        run: |
+          echo === Deteniendo servidores para liberar archivos ===
+          :: Intentar matar el proceso por nombre de PM2
+          call pm2 stop swamp-website || echo "Ya detenido"
+          call pm2 delete swamp-website || echo "Nada que borrar"
+          
+          :: Fuerza bruta: matar cualquier proceso que use el puerto 3000 (Vite/Serve)
+          for /f "tokens=5" %%a in ('netstat -aon ^| findstr :3000') do taskkill /f /pid %%a || echo "No hay procesos en puerto 3000"
+          
+          :: Ahora que el puerto está libre, forzamos limpieza manual si es necesario
+          :: (Solo borramos dist, el checkout se encargará del resto)
+          if exist "%GITHUB_WORKSPACE%\dist" rmdir /s /q "%GITHUB_WORKSPACE%\dist"
 
       - name: Instalar y Construir
         shell: cmd
