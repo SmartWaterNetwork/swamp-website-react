@@ -12,8 +12,8 @@ jobs:
       - name: Checkout del código
         uses: actions/checkout@v4
         with:
-          # Se reactiva cleanup automático ya que PM2 no bloqueará los archivos
-          clean: true
+          # Desactivamos clean para evitar errores EPERM en Windows cuando archivos están bloqueados
+          clean: false
 
       - name: Instalar y Construir
         shell: cmd
