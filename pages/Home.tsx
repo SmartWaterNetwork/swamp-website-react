@@ -93,7 +93,7 @@ const Home: React.FC = () => {
             <button
               key={idx}
               onClick={() => setCurrentSlide(idx)}
-              className={`w-3 h-3 rounded-full transition-all ${currentSlide === idx ? 'bg-primary scale-125' : 'bg-white/50 hover:bg-white'
+              className={`w-3 h-3 rounded-full transition-all ${currentSlide === idx ? 'bg-swam-primary scale-125' : 'bg-white/50 hover:bg-white'
                 }`}
             />
           ))}
@@ -105,7 +105,7 @@ const Home: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             <div className="flex flex-col items-center text-center">
-              <div className="w-16 h-1 bg-primary mb-6"></div>
+              <div className="w-16 h-1 bg-swam-primary mb-6"></div>
               <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-6 uppercase tracking-tight">
                 Recopilación y el uso de datos
               </h3>
@@ -115,7 +115,7 @@ const Home: React.FC = () => {
             </div>
 
             <div className="flex flex-col items-center text-center">
-              <div className="w-16 h-1 bg-primary mb-6"></div>
+              <div className="w-16 h-1 bg-swam-primary mb-6"></div>
               <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-6 uppercase tracking-tight">
                 Redes inteligentes de agua en capas
               </h3>
@@ -125,7 +125,7 @@ const Home: React.FC = () => {
             </div>
 
             <div className="flex flex-col items-center text-center">
-              <div className="w-16 h-1 bg-primary mb-6"></div>
+              <div className="w-16 h-1 bg-swam-primary mb-6"></div>
               <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-6 uppercase tracking-tight">
                 Soluciones de Smart Water Network
               </h3>
@@ -141,7 +141,7 @@ const Home: React.FC = () => {
       <section className="py-20 bg-white dark:bg-gray-900">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-10">
-            <span className="block w-12 h-1 bg-primary mb-4"></span>
+            <span className="block w-12 h-1 bg-swam-primary mb-4"></span>
             <h2 className="text-4xl font-extrabold text-gray-900 dark:text-white tracking-tight">Bienvenido a Smart Water Network</h2>
           </div>
           <div className="space-y-6 text-lg text-gray-600 dark:text-gray-300 leading-relaxed text-justify">
@@ -152,7 +152,7 @@ const Home: React.FC = () => {
               En los experimentos virtuales se describe completamente, el fundamento teórico, objetivos y procedimientos de cada experimento.
             </p>
             <p>
-              Espero que disfrute de una grata experiencia en nuestro Laboratorio Virtual. El SWAM actualmente se encuentra en desarrollo. Por favor reporte todos los comentarios, errores, y sugerencias a <a className="text-primary font-bold hover:underline" href="mailto:hmbenavides@utpl.edu.ec">hmbenavides@utpl.edu.ec</a>.
+              Espero que disfrute de una grata experiencia en nuestro Laboratorio Virtual. El SWAM actualmente se encuentra en desarrollo. Por favor reporte todos los comentarios, errores, y sugerencias a <a className="text-swam-primary font-bold hover:underline" href="mailto:hmbenavides@utpl.edu.ec">hmbenavides@utpl.edu.ec</a>.
             </p>
 
             <div className="mt-8 p-6 bg-gray-50 dark:bg-gray-800/50 border-l-4 border-gray-300 dark:border-gray-700 italic text-sm">

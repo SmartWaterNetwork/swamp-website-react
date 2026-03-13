@@ -7,7 +7,7 @@ const Equipo: React.FC = () => {
   return (
     <div className="max-w-7xl mx-auto px-4 py-12 animate-in fade-in duration-500">
       <div className="mb-12">
-        <div className="w-10 h-1 bg-primary mb-2"></div>
+        <div className="w-10 h-1 bg-swam-primary mb-2"></div>
         <h1 className="text-4xl font-bold text-gray-900 dark:text-white tracking-tight">Equipo</h1>
       </div>
 
@@ -26,7 +26,7 @@ const Equipo: React.FC = () => {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <h3 className="text-lg font-bold text-primary mb-1 leading-tight">
+              <h3 className="text-lg font-bold text-swam-primary mb-1 leading-tight">
                 {member.name}
               </h3>
               <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-6">
@@ -38,7 +38,7 @@ const Equipo: React.FC = () => {
                 <a
                   href={`mailto:${member.email}`}
                   title="Correo electrónico"
-                  className="w-8 h-8 rounded-full bg-gray-50 dark:bg-gray-700 flex items-center justify-center text-gray-400 hover:text-primary transition-colors"
+                  className="w-8 h-8 rounded-full bg-gray-50 dark:bg-gray-700 flex items-center justify-center text-gray-400 hover:text-swam-primary transition-colors"
                 >
                   <span className="material-icons text-lg">email</span>
                 </a>
@@ -47,7 +47,7 @@ const Equipo: React.FC = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   title="Enlace"
-                  className="w-8 h-8 rounded-full bg-gray-50 dark:bg-gray-700 flex items-center justify-center text-gray-400 hover:text-primary transition-colors"
+                  className="w-8 h-8 rounded-full bg-gray-50 dark:bg-gray-700 flex items-center justify-center text-gray-400 hover:text-swam-primary transition-colors"
                 >
                   <span className="material-icons text-lg">link</span>
                 </a>

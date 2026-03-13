@@ -49,7 +49,7 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ filename, className
     const proseClass = noProse ? '' : `prose dark:prose-invert max-w-none 
     prose-headings:text-gray-900 dark:prose-headings:text-white
     prose-p:text-gray-600 dark:prose-p:text-gray-300
-    prose-a:text-primary prose-a:no-underline hover:prose-a:underline`;
+    prose-a:text-swam-primary prose-a:no-underline hover:prose-a:underline`;
 
     return (
         <div className={`${proseClass} ${className}`}>

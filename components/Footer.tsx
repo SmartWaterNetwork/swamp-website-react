@@ -8,7 +8,7 @@ interface FooterProps {
 
 const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
   return (
-    <footer className="bg-gray-900 text-white pt-16 pb-8 border-t-4 border-primary">
+    <footer className="bg-gray-900 text-white pt-16 pb-8 border-t-4 border-swam-primary">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           {/* Logo & Info */}
@@ -25,21 +25,21 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
           {/* Contacts */}
           <div>
             <div className="flex items-center gap-2 mb-6">
-              <div className="w-8 h-1 bg-primary"></div>
+              <div className="w-8 h-1 bg-swam-primary"></div>
               <h4 className="text-lg font-bold uppercase tracking-wider">Contactos</h4>
             </div>
             <address className="not-italic text-sm text-gray-400 space-y-3">
-              <p className="flex justify-end gap-2 items-start"><span className="text-right">Ecuador</span> <span className="material-icons text-primary text-lg">location_on</span></p>
+              <p className="flex justify-end gap-2 items-start"><span className="text-right">Ecuador</span> <span className="material-icons text-swam-primary text-lg">location_on</span></p>
               <p className="text-right leading-relaxed"><span className="font-semibold text-white">Dirección:</span> Marcelino Champagnat s/n</p>
               <p className="text-right"><span className="font-semibold text-white">Teléfono:</span> +593 3701444</p>
-              <p className="text-right underline decoration-primary/50"><span className="font-semibold text-white">Email:</span> hmbenavides@utpl.edu.ec</p>
+              <p className="text-right underline decoration-swam-primary/50"><span className="font-semibold text-white">Email:</span> hmbenavides@utpl.edu.ec</p>
             </address>
           </div>
 
           {/* Menu */}
           <div>
             <div className="flex items-center gap-2 mb-6">
-              <div className="w-8 h-1 bg-primary"></div>
+              <div className="w-8 h-1 bg-swam-primary"></div>
               <h4 className="text-lg font-bold uppercase tracking-wider">Menu Principal</h4>
             </div>
             <ul className="text-sm text-gray-400 space-y-2">
@@ -47,7 +47,7 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                 <li key={item}>
                   <button
                     onClick={() => onNavigate(item)}
-                    className="hover:text-primary transition-colors flex items-center gap-2"
+                    className="hover:text-swam-primary transition-colors flex items-center gap-2"
                   >
                     <span>•</span> {item}
                   </button>
@@ -59,13 +59,13 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
           {/* Social */}
           <div>
             <div className="flex items-center gap-2 mb-6">
-              <div className="w-8 h-1 bg-primary"></div>
+              <div className="w-8 h-1 bg-swam-primary"></div>
               <h4 className="text-lg font-bold uppercase tracking-wider">Redes Sociales</h4>
             </div>
             <ul className="text-sm text-gray-400 space-y-2">
               {['Facebook', 'Twitter', 'Instagram', 'Google'].map(social => (
                 <li key={social}>
-                  <a href="#" className="hover:text-primary transition-colors flex items-center gap-2">
+                  <a href="#" className="hover:text-swam-primary transition-colors flex items-center gap-2">
                     <span>•</span> {social}
                   </a>
                 </li>

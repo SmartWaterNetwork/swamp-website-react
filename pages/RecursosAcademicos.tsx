@@ -47,7 +47,7 @@ const RecursosAcademicos: React.FC = () => {
       <div className="max-w-4xl mx-auto px-4 py-16 animate-in fade-in duration-500">
         <button
           onClick={() => setSelectedItem(null)}
-          className="flex items-center text-primary font-bold text-sm uppercase tracking-widest mb-12 hover:translate-x-[-8px] transition-transform group"
+          className="flex items-center text-swam-primary font-bold text-sm uppercase tracking-widest mb-12 hover:translate-x-[-8px] transition-transform group"
         >
           <span className="material-symbols-outlined mr-2">arrow_back</span>
           VOLVER A RECURSOS
@@ -63,12 +63,12 @@ const RecursosAcademicos: React.FC = () => {
               />
             </div>
             <div className="md:w-2/3">
-              <div className="w-16 h-1 bg-primary mb-6"></div>
+              <div className="w-16 h-1 bg-swam-primary mb-6"></div>
               <h1 className="text-3xl font-extrabold text-gray-900 dark:text-white leading-tight mb-4">
                 {selectedItem.title}
               </h1>
               <div className="flex gap-4 items-center">
-                <span className="bg-primary/10 text-primary px-3 py-1 rounded-full text-[10px] font-bold uppercase">
+                <span className="bg-swam-primary/10 text-swam-primary px-3 py-1 rounded-full text-[10px] font-bold uppercase">
                   {selectedItem.category}
                 </span>
                 {isResource && (selectedItem as AcademicResource).year && (
@@ -79,7 +79,7 @@ const RecursosAcademicos: React.FC = () => {
                 {isResource && (selectedItem as AcademicResource).pdfFile && (
                   <button
                     onClick={() => handleDownload((selectedItem as AcademicResource).pdfFile)}
-                    className="px-6 py-2 bg-primary text-white text-xs font-bold rounded-full hover:bg-primary/90 transition-all flex items-center"
+                    className="px-6 py-2 bg-swam-primary text-white text-xs font-bold rounded-full hover:bg-swam-primary/90 transition-all flex items-center"
                   >
                     <span className="material-symbols-outlined mr-2 text-sm">download</span>
                     DESCARGAR PDF
@@ -135,7 +135,7 @@ const RecursosAcademicos: React.FC = () => {
 
       <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
         <div>
-          <div className="w-16 h-1 bg-primary mb-4"></div>
+          <div className="w-16 h-1 bg-swam-primary mb-4"></div>
           <h1 className="text-4xl font-bold text-gray-900 dark:text-white">Recursos Académicos</h1>
           <p className="mt-4 text-gray-600 dark:text-gray-400 max-w-xl">
             Material educativo y de investigación compartido para la comunidad académica y profesional.
@@ -146,8 +146,8 @@ const RecursosAcademicos: React.FC = () => {
           <button
             onClick={() => { setActiveTab('PUBLICACIONES'); setCategoryFilter('Cualquiera'); }}
             className={`px-8 py-3 rounded-xl text-xs font-bold transition-all ${activeTab === 'PUBLICACIONES'
-              ? 'bg-primary text-white shadow-lg shadow-primary/20'
-              : 'text-gray-500 hover:text-primary'
+              ? 'bg-swam-primary text-white shadow-lg shadow-swam-primary/20'
+              : 'text-gray-500 hover:text-swam-primary'
               }`}
           >
             PUBLICACIONES
@@ -155,8 +155,8 @@ const RecursosAcademicos: React.FC = () => {
           <button
             onClick={() => { setActiveTab('VIDEOS'); setCategoryFilter('Cualquiera'); }}
             className={`px-8 py-3 rounded-xl text-xs font-bold transition-all ${activeTab === 'VIDEOS'
-              ? 'bg-primary text-white shadow-lg shadow-primary/20'
-              : 'text-gray-500 hover:text-primary'
+              ? 'bg-swam-primary text-white shadow-lg shadow-swam-primary/20'
+              : 'text-gray-500 hover:text-swam-primary'
               }`}
           >
             VÍDEOS
@@ -171,7 +171,7 @@ const RecursosAcademicos: React.FC = () => {
           <select
             value={categoryFilter}
             onChange={(e) => setCategoryFilter(e.target.value)}
-            className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg px-4 py-2 text-sm font-medium focus:ring-2 focus:ring-primary/20 outline-none transition-all"
+            className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg px-4 py-2 text-sm font-medium focus:ring-2 focus:ring-swam-primary/20 outline-none transition-all"
           >
             {categories.map(cat => (
               <option key={cat} value={cat}>{cat}</option>
@@ -202,14 +202,14 @@ const RecursosAcademicos: React.FC = () => {
                 />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-500 flex items-center justify-center">
                   <div className="bg-white/90 backdrop-blur scale-0 group-hover:scale-100 transition-transform duration-500 p-4 rounded-full shadow-2xl">
-                    <span className="material-symbols-outlined text-primary text-3xl">visibility</span>
+                    <span className="material-symbols-outlined text-swam-primary text-3xl">visibility</span>
                   </div>
                 </div>
               </div>
 
               <div className="p-8 flex flex-col flex-grow">
                 <div className="flex justify-between items-start mb-4">
-                  <span className="text-[10px] font-bold text-primary border border-primary/20 px-2 py-1 rounded uppercase tracking-widest">
+                  <span className="text-[10px] font-bold text-swam-primary border border-swam-primary/20 px-2 py-1 rounded uppercase tracking-widest">
                     {resource.type || resource.category}
                   </span>
                   {resource.year && (
@@ -220,7 +220,7 @@ const RecursosAcademicos: React.FC = () => {
                 </div>
 
                 <h3
-                  className="text-xl font-bold text-gray-900 dark:text-white mb-4 line-clamp-3 leading-tight group-hover:text-primary transition-colors cursor-pointer"
+                  className="text-xl font-bold text-gray-900 dark:text-white mb-4 line-clamp-3 leading-tight group-hover:text-swam-primary transition-colors cursor-pointer"
                   onClick={() => setSelectedItem(resource)}
                 >
                   {resource.title}
@@ -239,7 +239,7 @@ const RecursosAcademicos: React.FC = () => {
                 <div className="mt-auto pt-6 border-t border-gray-50 dark:border-gray-800 flex justify-between items-center">
                   <button
                     onClick={() => setSelectedItem(resource)}
-                    className="flex items-center text-primary font-bold text-[10px] uppercase tracking-widest hover:translate-x-1 transition-transform"
+                    className="flex items-center text-swam-primary font-bold text-[10px] uppercase tracking-widest hover:translate-x-1 transition-transform"
                   >
                     MÁS INFORMACIÓN
                     <span className="material-symbols-outlined text-sm ml-1">chevron_right</span>
@@ -247,7 +247,7 @@ const RecursosAcademicos: React.FC = () => {
                   {resource.pdfFile && (
                     <button
                       onClick={(e) => { e.stopPropagation(); handleDownload(resource.pdfFile); }}
-                      className="w-10 h-10 rounded-xl bg-gray-50 dark:bg-gray-700 flex items-center justify-center text-gray-400 hover:text-white hover:bg-primary transition-all shadow-sm"
+                      className="w-10 h-10 rounded-xl bg-gray-50 dark:bg-gray-700 flex items-center justify-center text-gray-400 hover:text-white hover:bg-swam-primary transition-all shadow-sm"
                       title="Descargar PDF"
                     >
                       <span className="material-symbols-outlined text-xl">download</span>
@@ -275,7 +275,7 @@ const RecursosAcademicos: React.FC = () => {
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors flex items-center justify-center">
-                  <div className="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center shadow-2xl scale-0 group-hover:scale-100 transition-transform">
+                  <div className="w-12 h-12 rounded-full bg-swam-primary text-white flex items-center justify-center shadow-2xl scale-0 group-hover:scale-100 transition-transform">
                     <span className="material-symbols-outlined text-2xl">play_arrow</span>
                   </div>
                 </div>
@@ -284,7 +284,7 @@ const RecursosAcademicos: React.FC = () => {
                 </div>
               </div>
               <div className="p-6">
-                <span className="text-[10px] font-bold text-primary uppercase tracking-widest mb-2 block">
+                <span className="text-[10px] font-bold text-swam-primary uppercase tracking-widest mb-2 block">
                   {video.category}
                 </span>
                 <h3 className="text-md font-bold text-gray-900 dark:text-white mb-4 line-clamp-2 leading-snug">
@@ -293,7 +293,7 @@ const RecursosAcademicos: React.FC = () => {
                 <div className="flex justify-between items-center pt-4 border-t border-gray-50 dark:border-gray-700">
                   <button
                     onClick={() => setSelectedItem(video)}
-                    className="text-primary font-bold text-[10px] uppercase tracking-widest hover:underline"
+                    className="text-swam-primary font-bold text-[10px] uppercase tracking-widest hover:underline"
                   >
                     Ver Detalle
                   </button>

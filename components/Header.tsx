@@ -34,8 +34,8 @@ const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
               <button
                 key={item}
                 onClick={() => onNavigate(item)}
-                className={`px-1 pt-1 text-xs font-bold transition-all border-b-2 hover:text-primary ${currentPage === item
-                    ? 'border-primary text-gray-900 dark:text-white'
+                className={`px-1 pt-1 text-xs font-bold transition-all border-b-2 hover:text-swam-primary ${currentPage === item
+                    ? 'border-swam-primary text-gray-900 dark:text-white'
                     : 'border-transparent text-gray-500 dark:text-gray-400'
                   }`}
               >
@@ -48,7 +48,7 @@ const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
           <div className="lg:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="p-2 text-gray-500 hover:text-primary focus:outline-none"
+              className="p-2 text-gray-500 hover:text-swam-primary focus:outline-none"
             >
               <span className="material-icons">{isMenuOpen ? 'close' : 'menu'}</span>
             </button>
@@ -68,7 +68,7 @@ const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
                   setIsMenuOpen(false);
                 }}
                 className={`block w-full text-left px-4 py-3 text-sm font-bold rounded-md ${currentPage === item
-                    ? 'bg-primary/10 text-primary'
+                    ? 'bg-swam-primary/10 text-swam-primary'
                     : 'text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800'
                   }`}
               >
