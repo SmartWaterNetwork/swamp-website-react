@@ -9,6 +9,15 @@ jobs:
     runs-on: self-hosted
 
     steps:
+      - name: Preparar entorno (Mover archivos bloqueados)
+        shell: cmd
+        continue-on-error: true
+        run: |
+          if exist "%GITHUB_WORKSPACE%\dist" (
+            echo Carpeta dist detectada, moviendo para evitar bloqueo de EPERM...
+            move "%GITHUB_WORKSPACE%\dist" "%TEMP%\dist_old_%RANDOM%"
+          )
+
       - name: Checkout del código
         uses: actions/checkout@v4
         with:
