@@ -9,14 +9,22 @@ jobs:
     runs-on: self-hosted
 
     steps:
-      - name: Preparar entorno (Mover archivos bloqueados)
+      - name: Limpieza agresiva de procesos y archivos
         shell: cmd
         continue-on-error: true
         run: |
-          if exist "%GITHUB_WORKSPACE%\dist" (
-            echo Carpeta dist detectada, moviendo para evitar bloqueo de EPERM...
-            move "%GITHUB_WORKSPACE%\dist" "%TEMP%\dist_old_%RANDOM%"
+          echo === Deteniendo procesos de Node para liberar archivos ===
+          taskkill /F /IM node.exe /T
+          
+          echo === Removiendo carpeta dist con fuerza ===
+          if exist "dist" (
+            rename "dist" "dist_to_delete_%RANDOM%"
+            rd /s /q "dist_to_delete_*"
           )
+          
+          echo === Limpiando archivos del workspace ===
+          for /d %%i in (*) do if not "%%i"==".git" if not "%%i"==".github" rd /s /q "%%i"
+          del /q *.*
 
       - name: Checkout del código
         uses: actions/checkout@v4
